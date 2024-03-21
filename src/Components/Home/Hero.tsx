@@ -1,9 +1,11 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import React from "react";
+
 const Hero = () => {
   return (
-    <>
+    <div>
       <section className="relative h-screen w-full">
         <div className="absolute inset-0 top-0 left-0 bottom-0 right-0">
           <Image
@@ -99,7 +101,7 @@ const Hero = () => {
           </span>
         </div> */}
       </section>
-    </>
+    </div>
   );
 };
 
