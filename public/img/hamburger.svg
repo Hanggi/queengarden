@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
+    height="17.00000000000023" viewBox="0 0 20 17.00000000000023" fill="none">
+    <g opacity="1" transform="translate(0 0)  rotate(0)">
+        <path id="矩形" fill-rule="evenodd" style="fill:#000000" opacity="1"
+            d="M1.5 3L10.5 3C11.33 3 12 2.33 12 1.5L12 1.5C12 0.67 11.33 0 10.5 0L1.5 0C0.67 0 0 0.67 0 1.5L0 1.5C0 2.33 0.67 3 1.5 3Z"></path>
+        <path id="矩形备份" fill-rule="evenodd" style="fill:#000000" opacity="1"
+            d="M1.5 10L18.5 10C19.33 10 20 9.33 20 8.5L20 8.5C20 7.67 19.33 7 18.5 7L1.5 7C0.67 7 0 7.67 0 8.5L0 8.5C0 9.33 0.67 10 1.5 10Z"></path>
+        <path id="矩形备份 2" fill-rule="evenodd" style="fill:#000000" opacity="1"
+            d="M1.5 17L14.5 17C15.33 17 16 16.33 16 15.5L16 15.5C16 14.67 15.33 14 14.5 14L1.5 14C0.67 14 0 14.67 0 15.5L0 15.5C0 16.33 0.67 17 1.5 17Z"></path>
+    </g>
+</svg>
