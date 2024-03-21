@@ -2,7 +2,6 @@ import Dropdown from "@mui/joy/Dropdown";
 import Menu from "@mui/joy/Menu";
 import MenuButton from "@mui/joy/MenuButton";
 import MenuItem from "@mui/joy/MenuItem";
-import Typography from "@mui/joy/Typography";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +10,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 
 import ModalComponent from "./ModalComponent";
+import MyConnectButton from "./buttons/ConnectButton";
 import ShadowButton from "./buttons/ShadowButton";
 
 function Logo() {
@@ -53,19 +53,7 @@ function NavButtons() {
           <MenuItem>Add item2</MenuItem>
         </Menu>
       </Dropdown>
-      <div
-        className={
-          "hover-btn-shadow inline-flex items-center justify-center " +
-          "lg:h-[40px]  lg:w-[160px] 3xl:h-[48px] 3xl:w-[190px] " +
-          "rounded-[10px] border-black border-2 bg-white " +
-          "shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:hover-btn-shadow " +
-          "text-center"
-        }
-      >
-        <Typography className="!font-bold text-black" level="title-lg">
-          Connect Wallet
-        </Typography>
-      </div>
+      <MyConnectButton />
     </div>
   );
 }
