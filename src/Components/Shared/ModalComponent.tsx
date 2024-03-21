@@ -36,10 +36,10 @@ const ModalComponent: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
             </div>
             {/* content */}
             <div className="mt-8">
-              <h4 className="text-base font-bold text-center mb-2">
-                Your modal content here.
+              <h4 className="text-[#25292E] text-base font-bold text-center mb-2">
+                What is a Wallet&nbsp;?
               </h4>
-              <p className="text-[#3c424299)] text-base font-normal text-center">
+              <p className="text-[#3c424299] leading-[20px] text-base font-normal text-center">
                 A wallet is used to send, receive, store, and display digital
                 assets. It’s also a new way to log in, without needing to create
                 new accounts and passwords on every website.

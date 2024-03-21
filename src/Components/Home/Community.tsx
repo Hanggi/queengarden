@@ -3,24 +3,24 @@ import React from "react";
 
 const Community = () => {
   return (
-    <div className="relative h-screen w-full bg-center bg-cover bg-[url('/img/comBG.webp')] pb-[88px]">
-      <div className="relative h-full w-full">
+    <div className="relative lg:h-screen w-full lg:bg-center bg-cover bg-[url('/img/comBG.webp')] lg:pb-[88px]">
+      <div className="relative h-full w-full p-10 lg:p-0">
         <div>
           <Image
             src="/img/commtext.webp"
             alt="text"
             width={1590}
             height={2262}
-            className="absolute left-[9%] top-[50%] w-[39%] translate-y-[-50%] object-cover"
+            className="lg:absolute lg:left-[9%] lg:top-[50%] lg:w-[39%] lg:translate-y-[-50%] lg:object-cover"
           />
         </div>
-        <div>
+        <div className="mt-10 lg:mt-0">
           <Image
             src="/img/commround.webp"
             alt="text"
             width={2463}
             height={2463}
-            className="absolute right-[6%] top-[50%] w-[42%] translate-y-[-50%] object-cover"
+            className="lg:absolute lg:right-[6%] lg:top-[50%] lg:w-[42%] lg:translate-y-[-50%] lg:object-cover"
           />
         </div>
         <div>
@@ -29,7 +29,7 @@ const Community = () => {
             alt="text"
             width={170}
             height={280}
-            className="absolute bottom-0 left-[2%] w-[9%] object-cover"
+            className="hidden lg:block lg:absolute bottom-0 left-[2%] w-[9%] object-cover"
           />
         </div>
       </div>

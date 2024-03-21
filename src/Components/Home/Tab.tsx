@@ -40,7 +40,7 @@ const Tab = () => {
               {[r1, r2, r3, r4, r5].map((thumbnail, index) => (
                 <div
                   key={index}
-                  className="px-4 w-full"
+                  className="px-2 lg:px-4 w-full"
                   onClick={() => handleClick(thumbnail.src)}
                 >
                   <Image src={thumbnail} alt={`r${index + 1}`} className="" />

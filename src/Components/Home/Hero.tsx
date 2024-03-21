@@ -9,8 +9,39 @@ const Hero = () => {
         <div className="absolute inset-0 top-0 left-0 bottom-0 right-0">
           <Image src="/img/homebg.webp" alt="home" className="" layout="fill" />
         </div>
-
-        <div className="absolute bottom-[108px] right-[20px] w-[200px] h-[250px] 4xl:bottom-[140px] 4xl:right-[30px] rounded-[16px] border-2 border-black bg-[rgba(219,53,57,1)] pl-[5px] ">
+        {/* small screen button */}
+        <div className="absolute bottom-[15%] z-10 flex lg:hidden w-full flex-col px-[15px]">
+          <Link href="/">
+            <div className="hover-btn-shadow mt-[20px] flex h-[56px] w-full items-center justify-center rounded-[12px] border-2 border-black bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] relative">
+              <span className="text-[21px] font-semibold text-[rgba(219,53,57,1)] underline">
+                Lottery Draw
+              </span>
+              <Image
+                alt="icon1"
+                loading="lazy"
+                width="40"
+                height="26"
+                className=" absolute left-[58px] top-[16px]"
+                src="/img/goldcardicon1.webp"
+              />
+              <Image
+                alt="icon1"
+                loading="lazy"
+                width="86"
+                height="28"
+                className="absolute right-[18px] top-[14px]"
+                src="/img/goldcardicon2.webp"
+              />
+            </div>
+          </Link>
+          <Link href="/mint">
+            <div className="hover-btn-shadow mt-[20px] flex h-[56px] w-full items-center justify-center rounded-[12px] border-2 border-black bg-[#FFD600] shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+              <span className="text-[21px] font-semibold text-black">Mint</span>
+            </div>
+          </Link>
+        </div>
+        {/*  large screen button */}
+        <div className="hidden lg:block absolute bottom-[108px] right-[20px] w-[200px] h-[250px] 4xl:bottom-[140px] 4xl:right-[30px] rounded-[16px] border-2 border-black bg-[rgba(219,53,57,1)] pl-[5px] ">
           <Image
             alt="card back"
             width="90"
@@ -51,7 +82,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <div className="hover-btn-shadow absolute bottom-[108px] left-[20px] flex h-[64px] w-[160px] items-center justify-center rounded-[16px] border-2 border-black bg-white pl-[5px] shadow-[4px_4px_0px_rgba(0,0,0,1)] 4xl:bottom-[140px] 4xl:left-[30px] 4xl:h-[80px] 4xl:w-[200px]">
+        <div className="hidden hover-btn-shadow absolute bottom-[108px] left-[20px] lg:flex h-[64px] w-[160px] items-center justify-center rounded-[16px] border-2 border-black bg-white pl-[5px] shadow-[4px_4px_0px_rgba(0,0,0,1)] 4xl:bottom-[140px] 4xl:left-[30px] 4xl:h-[80px] 4xl:w-[200px]">
           <Image
             alt="play"
             width="64"
