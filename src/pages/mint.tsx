@@ -12,6 +12,7 @@ const mint = () => {
       />
       <div className="absolute h-screen w-screen backdrop-blur z-10"></div>
       <div className="pb-[150px] relative top-[150px] z-20 h-screen w-screen overflow-y-auto">
+        
         <div className="w-full px-[12px] sm:px-0 sm:w-[80%] lg:w-[65%] xl:w-[1200px] mx-auto ">
           <div className="flex flex-col gap-6 mb-[100px]">
             <div className=" xl:w-[760px] xl:h-[590px] py-[20px] px-[12px] xl:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgb(0, 0, 0)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] mx-auto">

@@ -1,13 +1,14 @@
 import React from "react";
-import Hero from "./Hero";
+
 import Sticky from "../Shared/Sticky";
+import Hero from "./Hero";
 
 const HomeMain = () => {
   return (
     <>
       <div className="relative h-full">
         <Hero />
-        <Sticky />
+        {/* <Sticky /> */}
         {/* <Community />
         <Talk /> */}
       </div>
