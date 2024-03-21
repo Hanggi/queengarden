@@ -5,8 +5,8 @@ import React from "react";
 
 const Sticky = () => {
   return (
-    <>
-      <div className="bottom-0 left-0 z-50 lg:h-[88px] w-full flex flex-col gap-10 lg:gap-0 lg:flex-row lg:items-center justify-center bg-black lg:bg-black/80 px-[20px] 4xl:h-[112px] 4xl:px-[30px] py-10 lg:py-0">
+    <div>
+      <div className="absolute bottom-0 left-0 right-0 z-50 lg:h-[88px] w-full flex flex-col gap-10 lg:gap-0 lg:flex-row lg:items-center justify-center bg-black lg:bg-black/80 px-[20px] 4xl:h-[112px] 4xl:px-[30px] py-10 lg:py-0">
         <div className="flex">
           <Image
             alt="now"
@@ -68,7 +68,7 @@ const Sticky = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
