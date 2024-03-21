@@ -8,7 +8,7 @@ const HomeMain = () => {
     <>
       <div className="relative h-full">
         <Hero />
-        {/* <Sticky /> */}
+        <Sticky />
         {/* <Community />
         <Talk /> */}
       </div>
