@@ -10,8 +10,8 @@ const HomeMain = () => {
       <div className="relative h-full">
         <Hero />
         <Sticky />
-        <Community />
-        <Talk />
+        {/* <Community />
+        <Talk /> */}
       </div>
     </>
   );

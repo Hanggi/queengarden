@@ -23,15 +23,15 @@ const Community = () => {
             className="lg:absolute lg:right-[6%] lg:top-[50%] lg:w-[42%] lg:translate-y-[-50%] lg:object-cover"
           />
         </div>
-        <div>
-          <Image
-            src="/img/flower.webp"
-            alt="text"
-            width={170}
-            height={280}
-            className="hidden lg:block lg:absolute bottom-0 left-[2%] w-[9%] object-cover"
-          />
-        </div>
+      </div>
+      <div>
+        <Image
+          src="/img/flower.webp"
+          alt="text"
+          width={170}
+          height={280}
+          className="hidden lg:block lg:absolute bottom-0 left-[2%] w-[9%] object-cover"
+        />
       </div>
     </div>
   );

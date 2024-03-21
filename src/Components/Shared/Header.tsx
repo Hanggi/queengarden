@@ -65,7 +65,7 @@ const Header = () => {
               className="inline-flex items-center"
             >
               <Image
-                src="/img/navlogo.webp"
+                src="/img/navlogo.png"
                 alt="navbar"
                 className="w-full max-w-20"
                 width={80}
@@ -73,7 +73,7 @@ const Header = () => {
               />
             </Link>
             <ul className="flex items-center">
-              <Link
+              {/* <Link
                 href="/"
                 aria-label="Our product"
                 title="Our product"
@@ -84,8 +84,8 @@ const Header = () => {
                     Manifesto
                   </p>
                 </li>
-              </Link>
-              <li
+              </Link> */}
+              {/* <li
                 className="inline-flex items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] ml-[10px] sm:ml-4 cursor-pointer"
                 ref={dropdownRef}
               >
@@ -111,7 +111,6 @@ const Header = () => {
                 </span>
                 {isDropdownVisible && (
                   <div className="absolute top-[100%] w-fit flex flex-col gap-5 bg-white rounded-[10px] border-black border-2 py-5">
-                    {/* Dropdown content */}
                     <div className="px-3 flex flex-row items-center">
                       <div className="h-8 w-8">
                         <Image
@@ -156,7 +155,7 @@ const Header = () => {
                     </div>
                   </div>
                 )}
-              </li>
+              </li> */}
               <Link
                 href="https://twitter.com/realnobodyxyz"
                 target="_blank"
@@ -193,7 +192,7 @@ const Header = () => {
                 </span>
                 {isLanguageVisible && (
                   <div className="absolute top-[100%] w-fit flex flex-col gap-5 bg-white rounded-[10px] py-5">
-                    <div className="flex flex-col p-5">
+                    <div className="flex flex-col px-5">
                       {/* /english */}
                       <div
                         className="w-full flex items-center gap-2 flex-row cursor-pointer"
@@ -204,7 +203,7 @@ const Header = () => {
                         <p className="text-[#020817] text-[21px] font-semibold">
                           En
                         </p>
-                        <span className="text-[#020817] text-[18px] leading-[18px] font-medium">
+                        <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
                           English
                         </span>
                       </div>
@@ -218,7 +217,7 @@ const Header = () => {
                         <p className="text-[#020817] text-[21px] font-semibold">
                           Zh
                         </p>
-                        <span className="text-[#020817] text-[18px] leading-[18px] font-medium">
+                        <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
                           繁體中文
                         </span>
                       </div>
@@ -257,7 +256,7 @@ const Header = () => {
                       <div className=" inline-flex items-center justify-between">
                         <Image
                           alt="logo"
-                          src="/img/navlogo.webp"
+                          src="/img/navlogo.png"
                           className=""
                           width={48}
                           height={48}
@@ -288,8 +287,8 @@ const Header = () => {
                         </div>
                       </label>
                     </div>
-                    <div className=" border-b-[1px] border-gray-200 my-4 mt-8"></div>
-                    <Link href="/">
+                    <div className=" my-4 mt-8"></div>
+                    {/* <Link href="/">
                       <div className=" flex justify-between my-4 mt-1 text-[18px] font-semibold leading-[18px]  ">
                         Manifesto
                         <svg
@@ -307,8 +306,8 @@ const Header = () => {
                           <path d="m9 18 6-6-6-6"></path>
                         </svg>
                       </div>
-                    </Link>
-                    <div className=" border-b-[1px] border-gray-200 my-1"></div>
+                    </Link> */}
+                    <div className="border-b-[1px] border-gray-200 my-1"></div>
                     <div className="w-full" data-orientation="vertical">
                       <div
                         data-state="open"

@@ -7,11 +7,16 @@ const Hero = () => {
     <>
       <section className="relative h-screen w-full">
         <div className="absolute inset-0 top-0 left-0 bottom-0 right-0">
-          <Image src="/img/homebg.webp" alt="home" className="" layout="fill" />
+          <Image
+            src="/img/homebg.png"
+            alt="home"
+            className="object-cover"
+            layout="fill"
+          />
         </div>
         {/* small screen button */}
         <div className="absolute bottom-[15%] z-10 flex lg:hidden w-full flex-col px-[15px]">
-          <Link href="/">
+          {/* <Link href="/">
             <div className="hover-btn-shadow mt-[20px] flex h-[56px] w-full items-center justify-center rounded-[12px] border-2 border-black bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] relative">
               <span className="text-[21px] font-semibold text-[rgba(219,53,57,1)] underline">
                 Lottery Draw
@@ -33,7 +38,7 @@ const Hero = () => {
                 src="/img/goldcardicon2.webp"
               />
             </div>
-          </Link>
+          </Link> */}
           <Link href="/mint">
             <div className="hover-btn-shadow mt-[20px] flex h-[56px] w-full items-center justify-center rounded-[12px] border-2 border-black bg-[#FFD600] shadow-[4px_4px_0px_rgba(0,0,0,1)]">
               <span className="text-[21px] font-semibold text-black">Mint</span>
@@ -41,7 +46,7 @@ const Hero = () => {
           </Link>
         </div>
         {/*  large screen button */}
-        <div className="hidden lg:block absolute bottom-[108px] right-[20px] w-[200px] h-[250px] 4xl:bottom-[140px] 4xl:right-[30px] rounded-[16px] border-2 border-black bg-[rgba(219,53,57,1)] pl-[5px] ">
+        {/* <div className="hidden lg:block absolute bottom-[108px] right-[20px] w-[200px] h-[250px] 4xl:bottom-[140px] 4xl:right-[30px] rounded-[16px] border-2 border-black bg-[rgba(219,53,57,1)] pl-[5px] ">
           <Image
             alt="card back"
             width="90"
@@ -81,8 +86,8 @@ const Hero = () => {
               </div>
             </Link>
           </div>
-        </div>
-        <div className="hidden hover-btn-shadow absolute bottom-[108px] left-[20px] lg:flex h-[64px] w-[160px] items-center justify-center rounded-[16px] border-2 border-black bg-white pl-[5px] shadow-[4px_4px_0px_rgba(0,0,0,1)] 4xl:bottom-[140px] 4xl:left-[30px] 4xl:h-[80px] 4xl:w-[200px]">
+        </div> */}
+        {/* <div className="hidden hover-btn-shadow absolute bottom-[108px] left-[20px] lg:flex h-[64px] w-[160px] items-center justify-center rounded-[16px] border-2 border-black bg-white pl-[5px] shadow-[4px_4px_0px_rgba(0,0,0,1)] 4xl:bottom-[140px] 4xl:left-[30px] 4xl:h-[80px] 4xl:w-[200px]">
           <Image
             alt="play"
             width="64"
@@ -93,7 +98,7 @@ const Hero = () => {
           <span className="ml-[10px] text-[16px] font-semibold leading-[20px] text-black 4xl:ml-[16px] 4xl:text-[18px] 4xl:leading-[24px]">
             NOBODY NFT MV
           </span>
-        </div>
+        </div> */}
       </section>
     </>
   );

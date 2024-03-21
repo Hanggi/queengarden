@@ -4,7 +4,7 @@ import Link from "next/link";
 const Sticky = () => {
   return (
     <>
-      <div className="lg:sticky bottom-0 left-0 z-50 lg:h-[88px] w-full flex flex-col gap-10 lg:gap-0 lg:flex-row items-center justify-center bg-black lg:bg-black/80 px-[20px] 4xl:h-[112px] 4xl:px-[30px] py-10 lg:py-0">
+      <div className="lg:sticky bottom-0 left-0 z-50 lg:h-[88px] w-full flex flex-col gap-10 lg:gap-0 lg:flex-row lg:items-center justify-center bg-black lg:bg-black/80 px-[20px] 4xl:h-[112px] 4xl:px-[30px] py-10 lg:py-0">
         <div className="flex">
           <Image
             alt="now"

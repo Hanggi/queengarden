@@ -5,10 +5,10 @@ const mint = () => {
   return (
     <div className=" h-screen overflow-hidden">
       <Image
-        src="/img/homebg.webp"
+        src="/img/homebg.png"
         alt="homrbg"
         layout="fill"
-        className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0"
+        className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0 object-cover"
       />
       <div className="absolute h-screen w-screen backdrop-blur z-10"></div>
       <div className="pb-[150px] relative top-[150px] z-20 h-screen w-screen overflow-y-auto">
@@ -16,28 +16,31 @@ const mint = () => {
           <div className="flex flex-col gap-6 mb-[100px]">
             <div className=" xl:w-[760px] xl:h-[590px] py-[20px] px-[12px] xl:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgb(0, 0, 0)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] mx-auto">
               <div className="flex relative">
-                <div className=" shrink-0 relative w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-[16px] overflow-hidden">
+                <div className=" shrink-0 relative w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-[16px] overflow-hidden">
                   <Image
-                    src="/img/nftmintcover.webp"
+                    src="/img/Blind512.gif"
                     alt="image animation"
                     className="w-full h-full"
                     width={100}
                     height={100}
                   />
                 </div>
-                <div className="flex-grow  h-full ml-[20px] py-[6px] xl:ml-[30px] xl:py-[10px] flex-col justify-between">
+                <div className="flex-grow h-full ml-[20px] py-[6px] xl:ml-[30px] xl:py-[10px] flex-col justify-between">
                   <div>
                     <h3 className="text-[21px] leading-[21px] xl:text-[24px] font-bold xl:leading-[24px] mb-2">
-                      Mint Your NFT
+                      Mint Your QUEENGARDEN NFT
                     </h3>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Total offering: 10000
+                      Total Supply: 1000
                     </p>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Price: 0.19527 ETH
+                      Mainnet: Polygon
                     </p>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Max mint per address: 1
+                      Price: Free + Gas Fee
+                    </p>
+                    <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
+                      Maximum Mint Per Wallet Address: 1
                     </p>
                   </div>
                 </div>
@@ -53,9 +56,9 @@ const mint = () => {
                   </div>
                 </div>
               </div>
-              <div className=" hidden lg:block mt-[20px] xl:mt-0 mx-auto">
+              <div className="hidden lg:block mt-[20px] xl:mt-0 mx-auto">
                 <p>
-                  Nobody NFT Smart Contract:{" "}
+                  QUEENGARDEN NFT Smart Contract Information&nbsp;&nbsp;
                   <Link
                     href="https://etherscan.io/address/0x129d453253dbCE5CF6997DB8Fb461B2A20Fd275F"
                     target="__blank"
@@ -66,146 +69,107 @@ const mint = () => {
                 </p>
               </div>
             </div>
-            <div className="overflow-visible w-full xl:w-[760px] sm:h-[390px] overflow-y-scroll p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] mt-[20px] xl:mt-0 mx-auto">
-              <h3 className=" text-white sm:text-black text-[21px] sm:text-[24px] font-bold leading-6 mb-[20px] mt-[30px] sm:mt-0">
-                Mint 101
+            <div className="overflow-visible w-full xl:w-[760px] sm:h-[390px] overflow-y-scroll p-4 lg:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] mt-[20px] xl:mt-0 mx-auto">
+              <h3 className=" sm:text-black text-[21px] sm:text-[24px] font-bold leading-6 mb-[20px] mt-[30px] sm:mt-0">
+                Minted XXXX/1000
               </h3>
               <div>
-                <h2 className="text-[20px] sm:text-[22px] font-semibold mb-4">
-                  PART I: Minting
-                </h2>
-                <p className=" text-[18px] font-medium leading-[30px]">
-                  1. Minting time:
+                <h4 className="text-[20px] sm:text-[22px] font-semibold mb-4">
+                  Minting Schedule
+                </h4>
+                <p className="text-[18px] font-medium leading-[30px]">
+                  Allowlist
                   <br />
-                  Feb 1, 2024, 8:00 PM (UTC+8) to Feb 3, 2024, 8:00 PM (UTC+8).
+                  March 31, 8 PM - April 1, 8 PM (UTC+9)
+                  <br />
+                  Public
+                  <br />
+                  April 1, 9 PM (UTC+9) - April 2, 9 PM (UTC+9)
+                  <br />
+                  <br />
+                  Minting Rules
+                  <br />
+                  <br />
+                </p>
+                <p className="text-[18px] font-medium leading-[30px]">
+                  1. Minting Phase:
+                  <br />
+                  March 31, 2024, 8:00 PM (UTC+9) - April 1, 2024, 8:00 PM
+                  (UTC+9).
                   <br />
                   <br />
                   2. Minting price:
                   <br />
-                  0.19527E + gas fee
+                  Free + Gas Fee
                   <br />
                   <br />
-                  3. Nobody NFT collection size:
+                  3. Total Supply:
                   <br />
-                  10,000 Nobody NFTs
-                  <br />
-                  <br />
-                  4. Number of available Nobody NFTs for minting and Whitelists:
-                  <br />
-                  Both are 9,500. <br />
-                  <br />
-                  The rest 500 will be allocated as follows:
-                  <br />
-                  Investors: 350
-                  <br />
-                  Nobody Team: 50
-                  <br />
-                  Friends and family: 50
-                  <br />
-                  Community Development Fund: 50
+                  1,000 QUEENGARDEN NFTs
                   <br />
                   <br />
-                  Any unminted Nobody NFTs will go to the Treasury after the
-                  minting period ends.
+                  4. Available QUEENGARDEN NFTs for Minting and Allowlists:
+                  <br />
+                  Both are 800.
+                  <br />
+                  <br />
+                  The remaining 200 NFTs will be distributed as follows:
+                  <br />
+                  Investors: 50
+                  <br />
+                  Team: 20
+                  <br />
+                  Treasury: 80
+                  <br />
+                  Community Development Fund: 50.
+                  <br />
+                  <br />
+                  After minting ends, any remaining QUEENGARDEN NFTs will be
+                  allocated to the Treasury.
                   <br />
                   <br />
                   5. Who is eligible to mint?
                   <br />
-                  Anyone can participate in the minting of Nobody NFTs.
+                  Everyone can participate in QUEENGARDEN NFT minting. Please
+                  log in to https://queengardennft.com/ and verify your
+                  allowlist eligibility through wallet connection.
                   <br />
                   <br />
-                  Whitelist holders have the highest priority and are guaranteed
-                  to mint a Nobody NFT during the minting period. You do not
-                  need to rush. <br />
+                  • Allowlists: Given the highest priority, they can guarantee
+                  QUEENGARDEN NFTs if they successfully minting during the
+                  allowlist phase. <br />
                   <br />
-                  Check your eligibility: visit nobody.xyz/mint; connect wallet.
-                  <br />
-                  <br />
-                  Non-whitelist holders still have a chance to mint an NFT
-                  through raffle. If a non-whitelist holder makes the deposit
-                  within one hour after the minting starts, he/she will receive
-                  a 9.527x boost in the raffle. A successful deposit would imply
-                  that the user joins the raffle. <br />
-                  <br />
-                  The allocation of NFTs for the raffle depends on the number of
-                  whitelist holders who make the deposit. For example, if there
-                  are 4,500 Whitelist holders and 10,000 non-whitelist holders
-                  who make the deposit by the end of the Minting period, there
-                  will be 5,000 NFTs for the raffle (9,500-4,500). The results
-                  of the raffle will be announced within 24 hours after the
-                  minting period ends.
+                  • Non-Allowlists: Can participate in minting during the public
+                  phase.
                   <br />
                   <br />
-                  6. How many Nobody NFTs can be minted per wallet?
+                  6. How many QUEENGARDEN NFTs can be minted per wallet?
                   <br />
-                  Each wallet address can only mint one Nobody NFT.
+                  Each wallet address can only mint 1 QUEENGARDEN NFT at most.
                   <br />
                   <br />
                   7. Which wallet address should I use for minting?
                   <br />
-                  If you have a Whitelist, the minting wallet is the wallet
-                  address that you directly submitted to us or indirectly
-                  through our launching partners. If you are a non-whitelist
-                  holder, feel free to mint with any of your ERC20 wallet
-                  address.
+                  If you are on the allowlist, please use the wallet address
+                  eligible for allowlist minting.
+                  <br />
+                  If you are not on the allowlist, you can use any ERC-20 wallet
+                  address for minting.
                   <br />
                   <br />
-                  8. When will the reveals take place?
+                  8. Reveal Date:
                   <br />
-                  Feb 7, 2024.
+                  April 14, 2024.
                   <br />
                   <br />
-                  9. What is the royalty and how will it be used?
+                  9. What is the creation fee (royalty), and how will it be
+                  used?
                   <br />
-                  5%. We will use the funds to hire more full-time team members,
-                  fund operations, and provide more value to the Nobody
+                  5%. We will allocate the funds to hire more full-time team
+                  members, support operations, and provide more value to our
                   community.
                   <br />
                   <br />
-                </p>
-                <h2 className="text-[20px] sm:text-[22px] font-semibold mb-4">
-                  PART II: Raffle and Airdrop
-                </h2>
-                <p className=" text-[18px] font-medium leading-[30px]">
-                  1. Raffle and Airdrop Time:
-                  <br />
-                  Feb 3, 2024, 8:00 PM (UTC+8) to Feb 4, 2024, 8 PM (UTC+8).
-                  <br />
-                  <br />
-                  2. Raffle and Airdrop Details:
-                  <br />
-                  If you have a Whitelist and successfully mint an Nobody NFT,
-                  we will airdrop it to your minting wallet within 24 hours
-                  after the minting ends in the form of a Mystery Box. No
-                  further action is required.
-                  <br />
-                  <br />
-                  If you are a non-whitelist holder and join the raffle, you
-                  could check the status of the raffle on the minting page in 24
-                  hours after the minting ends (Mint page: nobody.xyz/mint).
-                  <br />
-                  <br />
-                  We will also release the list of successful mints on
-                  Nobody&apos;s social media. As long as your wallet address
-                  appears on the list, you will be guaranteed to receive the NFT
-                  airdrop. No further action is required.
-                  <br />
-                  <br />
-                </p>
-                <p className=" text-[18px] font-medium leading-[30px]">
-                  1. Refund time:
-                  <br />
-                  Feb 4, 2024, 8:00 PM (UTC+8) to Jul 4, 2024, 8 PM (UTC+8).
-                  <br />
-                  <br />
-                  2. Refund details:
-                  <br />
-                  If you don’t win the raffle when you check the status after
-                  connecting the wallet, it means you do not mint the Nobody NFT
-                  successfully.
-                  <br />
-                  <br />
-                  Refund ends on July 4, 2024.
                 </p>
               </div>
             </div>
