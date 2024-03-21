@@ -6,16 +6,10 @@ import Typography from "@mui/joy/Typography";
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 
 import React, { useEffect, useRef, useState } from "react";
 
-import discord from "../../../public/img/discord.svg";
-import hamburger from "../../../public/img/hamburger.svg";
-import insta from "../../../public/img/insta.svg";
-import twitter from "../../../public/img/twitter.svg";
-import world from "../../../public/img/world.svg";
 import ModalComponent from "./ModalComponent";
 import ShadowButton from "./buttons/ShadowButton";
 
@@ -24,10 +18,10 @@ function Logo() {
     <Link href="/">
       <div className="relative ml-[0px]  h-[56px] w-[56px] sm:ml-[0px] lg:h-[80px] lg:w-[80px]">
         <Image
-          src="/img/navlogo.png"
           alt="logo"
           className="object-cover"
           layout="fill"
+          src="/img/navlogo.png"
         />
       </div>
     </Link>
@@ -83,14 +77,18 @@ const Header = () => {
   const closeModal = () => setIsModalOpen(false);
   const [isLanguageVisible, setIsLanguageVisible] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
   const toggleLanguageDropdown = () => setIsLanguageVisible(!isLanguageVisible);
   const toggleDropdown = () => setIsDropdownVisible(!isDropdownVisible);
+
   const dropdownRef = useRef<HTMLLIElement>(null);
   const languagedropdownRef = useRef<HTMLLIElement>(null);
+
   const handleChnage = (locale: any) => {
     route.push(route.pathname, route.asPath, { locale });
     console.log(route.pathname, route.asPath);
   };
+
   const handleClickOutside = (event: MouseEvent) => {
     if (
       dropdownRef.current &&
@@ -99,6 +97,7 @@ const Header = () => {
       setIsDropdownVisible(false);
     }
   };
+
   const handleClickOutsideLanguage = (event: MouseEvent) => {
     if (
       languagedropdownRef.current &&
@@ -107,26 +106,31 @@ const Header = () => {
       setIsLanguageVisible(false);
     }
   };
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutsideLanguage);
     return () => {
       document.removeEventListener("click", handleClickOutsideLanguage);
     };
   }, []);
+
   return (
     <div>
       <div className={`absolute top-0 w-full z-50`}>
         <div className="mx-auto px-5">
           <div className="relative flex items-center justify-between">
             <Logo />
-            <NavButtons />
-            <ModalComponent isOpen={isModalOpen} closeModal={closeModal} />
+            <div className="hidden lg:block">
+              <NavButtons />
+            </div>
+            <ModalComponent closeModal={closeModal} isOpen={isModalOpen} />
           </div>
         </div>
       </div>

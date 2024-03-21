@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Header from "../Shared/Header";
 import Link from "next/link";
 const Hero = () => {
   return (
@@ -8,10 +7,10 @@ const Hero = () => {
       <section className="relative h-screen w-full">
         <div className="absolute inset-0 top-0 left-0 bottom-0 right-0">
           <Image
-            src="/img/homebg.png"
             alt="home"
             className="object-cover"
             layout="fill"
+            src="/img/homebg.png"
           />
         </div>
         {/* small screen button */}

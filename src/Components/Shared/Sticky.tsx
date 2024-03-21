@@ -8,10 +8,10 @@ const Sticky = () => {
         <div className="flex">
           <Image
             alt="now"
-            width="20"
-            height="48"
             className="object-contain"
+            height="48"
             src="/img/progress.webp"
+            width="20"
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold text-white 4xl:text-[24px]">
@@ -25,10 +25,10 @@ const Sticky = () => {
         <div className="lg:ml-[30px] flex 4xl:ml-[50px] 5xl:ml-[100px] text-white">
           <Image
             alt="next"
-            width="20"
-            height="48"
             className="object-contain"
+            height="48"
             src="/img/progress.webp"
+            width="20"
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold 4xl:text-[24px]">
@@ -42,10 +42,10 @@ const Sticky = () => {
         <div className="lg:ml-[30px] flex 4xl:ml-[50px] 5xl:ml-[100px] text-[#FFD600]">
           <Image
             alt="next"
-            width="20"
-            height="48"
             className="object-contain"
+            height="48"
             src="/img/goldprogress.webp"
+            width="20"
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold 4xl:text-[24px]">
