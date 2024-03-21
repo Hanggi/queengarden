@@ -16,11 +16,11 @@ import ShadowButton from "./buttons/ShadowButton";
 function Logo() {
   return (
     <Link href="/">
-      <div className="relative ml-[0px]  h-[56px] w-[56px] sm:ml-[0px] lg:h-[80px] lg:w-[80px]">
+      <div className="relative ml-[0px] h-[56px] w-[56px] sm:ml-[0px] lg:h-[80px] lg:w-[80px]">
         <Image
           alt="logo"
           className="object-cover"
-          layout="fill"
+          fill
           src="/img/navlogo.png"
         />
       </div>

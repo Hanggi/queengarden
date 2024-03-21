@@ -7,7 +7,7 @@ const mint = () => {
       <Image
         alt="homrbg"
         className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0 object-cover"
-        layout="fill"
+        fill
         src="/img/homebg.png"
       />
       <div className="absolute h-screen w-screen backdrop-blur z-10"></div>

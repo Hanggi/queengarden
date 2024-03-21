@@ -6,7 +6,11 @@ interface Props {
 }
 
 const ShadowButton = React.forwardRef<HTMLDivElement, Props>(
-  ({ children, ...rest }: Props, ref) => {
+  ({ children,
+    
+    
+    
+    ownerstate, ...rest }: Props, ref) => {
     return (
       <div
         {...rest}
