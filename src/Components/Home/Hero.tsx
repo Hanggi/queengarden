@@ -11,7 +11,7 @@ const Hero = () => {
           <Image
             alt="home"
             className="object-cover"
-            layout="fill"
+            fill
             src="/img/homebg.png"
           />
         </div>
