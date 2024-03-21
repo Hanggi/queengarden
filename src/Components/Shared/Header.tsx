@@ -67,9 +67,9 @@ const Header = () => {
               <Image
                 src="/img/navlogo.png"
                 alt="navbar"
-                className="w-full max-w-20"
-                width={80}
-                height={80}
+                className="w-full max-w-[100px]"
+                width={100}
+                height={100}
               />
             </Link>
             <ul className="flex items-center">
