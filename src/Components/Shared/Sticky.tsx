@@ -17,10 +17,10 @@ const Sticky = () => {
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold text-white 4xl:text-[24px]">
-              Mint
+              Allowlist
             </span>
             <span className="text-base  lg:text-[14px] font-semibold text-white 4xl:text-[18px]">
-              Feb 1, 8 PM - Feb 3, 8 PM (UTC+8)
+              March 31, 8 PM - April 1, 8 PM (UTC+9)
             </span>
           </div>
         </div>
@@ -34,14 +34,14 @@ const Sticky = () => {
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold 4xl:text-[24px]">
-              Raffle and Airdrop
+              Public
             </span>
             <span className="text-base lg:text-[14px] font-semibold 4xl:text-[18px]">
-              Feb 3, 8 PM - Feb 4, 8 PM (UTC+8)
+              April 1, 9 PM (UTC+9) - April 2, 9 PM (UTC+9)
             </span>
           </div>
         </div>
-        <div className="lg:ml-[30px] flex 4xl:ml-[50px] 5xl:ml-[100px] text-[#FFD600]">
+        {/* <div className="lg:ml-[30px] flex 4xl:ml-[50px] 5xl:ml-[100px] text-[#FFD600]">
           <Image
             alt="next"
             className="object-contain"
@@ -57,7 +57,7 @@ const Sticky = () => {
               Start on Feb 4, 8 PM (UTC+8)
             </span>
           </div>
-        </div>
+        </div> */}
         <div className="ml-auto hidden lg:flex">
           <Link href="/mint">
             <div className="hover-btn-shadow ml-[20px] flex h-[64px] w-[200px] flex-col items-center justify-center rounded-[12px] border-2 border-black bg-[#FFD600] pl-[5px] shadow-[4px_4px_0px_rgba(0,0,0,1)] 4xl:ml-[30px] 4xl:h-[72px] 4xl:w-[260px]">
