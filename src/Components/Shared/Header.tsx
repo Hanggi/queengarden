@@ -34,9 +34,9 @@ function NavButtons() {
       <ShadowButton>
         <i className="ri-twitter-x-fill text-2xl"></i>
       </ShadowButton>
-      <ShadowButton>
+      {/* <ShadowButton>
         <i className="ri-instagram-fill text-3xl"></i>
-      </ShadowButton>
+      </ShadowButton> */}
       <ShadowButton>
         <i className="ri-discord-fill text-3xl"></i>
       </ShadowButton>
