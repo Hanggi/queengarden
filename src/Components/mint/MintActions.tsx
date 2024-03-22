@@ -2,6 +2,8 @@ import { queenGardenABI } from "@/abi/queen-garden.abi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useAccount, useSimulateContract, useWriteContract } from "wagmi";
 
+import { useEffect } from "react";
+
 interface Props {}
 
 export default function MintActions({}: Props) {
@@ -16,11 +18,14 @@ export default function MintActions({}: Props) {
     args: [],
   });
 
-  console.log(result);
-  console.log(result.error);
-  console.log(result.data);
+  // console.log(data);
 
-  console.log(data);
+  // useEffect(() => {
+  //   if (result) {
+  //     console.log(result.error);
+  //     console.log(result.data);
+  //   }
+  // }, [result]);
 
   if (isConnected) {
     return (
@@ -28,6 +33,7 @@ export default function MintActions({}: Props) {
         <div
           className="h-[56px] w-full rounded-[12px] xl:h-[64px] xl:rounded-[12px] bg-[rgba(255,214,0,1)] border-[2px] border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover-btn-shadow flex justify-center items-center text-[21px] xl:text-[24px] leading-[21px] xl:leading-[24px] font-semibold min-w-[240px] xl:min-w-[260px]"
           onClick={() => {
+            console.log(process.env.NEXT_PUBLIC_NFT_ADDRESS);
             writeContract({
               abi: queenGardenABI,
               address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x{string}`,
