@@ -7,23 +7,24 @@ import insta from "../../../public/img/insta.svg";
 import world from "../../../public/img/world.svg";
 import hamburger from "../../../public/img/hamburger.svg";
 import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
 import ModalComponent from "./ModalComponent";
+import { useTranslation } from "next-i18next";
 
 const Header = () => {
-  const route = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const router = useRouter();
+  const { t } = useTranslation("common");
+  const [isOpen, setIsOpen] = useState(false);
   const [isLanguageVisible, setIsLanguageVisible] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const toggleLanguageDropdown = () => setIsLanguageVisible(!isLanguageVisible);
-  const toggleDropdown = () => setIsDropdownVisible(!isDropdownVisible);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const languagedropdownRef = useRef<HTMLLIElement>(null);
+
   const handleChnage = (locale: any) => {
-    route.push(route.pathname, route.asPath, { locale });
-    console.log(route.pathname, route.asPath);
+    router.push(router.pathname, router.asPath, { locale });
+    setSelectedLanguage(locale);
+    setIsLanguageVisible(false);
   };
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -33,12 +34,19 @@ const Header = () => {
       setIsDropdownVisible(false);
     }
   };
-  const handleClickOutsideLanguage = (event: MouseEvent) => {
-    if (
-      languagedropdownRef.current &&
-      !languagedropdownRef.current.contains(event.target as Node)
-    ) {
-      setIsLanguageVisible(false);
+  const toggleDrawer = () => {
+    setIsOpen((prev) => !prev); // Toggle isOpen state
+  };
+
+  const handleCloseDrawer1 = () => {
+    setIsOpen(false);
+  };
+  const handleCloseDrawer = (): void => {
+    const drawerCheckbox = document.getElementById(
+      "my-drawer"
+    ) as HTMLInputElement;
+    if (drawerCheckbox) {
+      drawerCheckbox.checked = false;
     }
   };
   useEffect(() => {
@@ -47,23 +55,13 @@ const Header = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutsideLanguage);
-    return () => {
-      document.removeEventListener("click", handleClickOutsideLanguage);
-    };
-  }, []);
+
   return (
     <div>
       <div className={`absolute top-0 w-full z-50`}>
         <div className="mx-auto px-5">
           <div className="relative flex items-center justify-between">
-            <Link
-              href="/"
-              aria-label="Company"
-              title="Company"
-              className="inline-flex items-center"
-            >
+            <Link href="/" className="inline-flex items-center">
               <Image
                 src="/img/navlogo.png"
                 alt="navbar"
@@ -73,125 +71,40 @@ const Header = () => {
               />
             </Link>
             <ul className="flex items-center">
-              {/* <Link
-                href="/"
-                aria-label="Our product"
-                title="Our product"
-                className="hidden lg:block"
-              >
-                <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] min-w-[84px] lg:h-[40px] lg:min-w-[80px] 3xl:h-[48px] 3xl:min-w-[96px] px-[24px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] ml-[10px] sm:ml-4 sm:hover-btn-shadow">
-                  <p className=" text-[16px] leading-[16px]  sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black ml-[6px]">
-                    Manifesto
-                  </p>
-                </li>
-              </Link> */}
-              {/* <li
-                className="inline-flex items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] ml-[10px] sm:ml-4 cursor-pointer"
-                ref={dropdownRef}
-              >
-                <span
-                  className="text-[16px] whitespace-nowrap leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black mx-[6px] flex"
-                  onClick={toggleDropdown}
-                >
-                  OKX NXT
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-chevron-down ml-1"
-                  >
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg>
-                </span>
-                {isDropdownVisible && (
-                  <div className="absolute top-[100%] w-fit flex flex-col gap-5 bg-white rounded-[10px] border-black border-2 py-5">
-                    <div className="px-3 flex flex-row items-center">
-                      <div className="h-8 w-8">
-                        <Image
-                          src="/img/drop1.webp"
-                          alt="twitter"
-                          className="h-full w-full"
-                          width={32}
-                          height={32}
-                        />
-                      </div>
-                      <span className="text-[18px] leading-[18px] font-medium ml-[10px]">
-                        OKX NFT
-                      </span>
-                    </div>
-                    <div className="px-3 flex flex-row items-center">
-                      <div className="h-8 w-8">
-                        <Image
-                          src="/img/drop2.webp"
-                          alt="twitter"
-                          className="h-full w-full"
-                          width={32}
-                          height={32}
-                        />
-                      </div>
-                      <span className="text-[18px] leading-[18px] font-medium ml-[10px]">
-                        OpenSea
-                      </span>
-                    </div>
-                    <div className="px-3 flex flex-row items-center">
-                      <div className="h-8 w-8">
-                        <Image
-                          src="/img/drop3.webp"
-                          alt="twitter"
-                          className="h-full w-full"
-                          width={32}
-                          height={32}
-                        />
-                      </div>
-                      <span className="text-[18px] leading-[18px] font-medium ml-[10px]">
-                        Element
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </li> */}
-              <Link
-                href="https://twitter.com/realnobodyxyz"
-                target="_blank"
-                className="ml-[10px] sm:ml-4"
-              >
+              <Link href="/" target="_blank" className="ml-[10px] sm:ml-4">
                 <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] w-[36px] lg:h-[40px] lg:w-[40px] 3xl:h-[48px] 3xl:w-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:hover-btn-shadow ">
                   <Image src={twitter} alt="twitter" className="h-[30px]" />
                 </li>
               </Link>
-              <Link
-                href="https://www.instagram.com/realnobodyxyz/"
-                className="ml-[10px] sm:ml-4"
-              >
+              <Link href="/" className="ml-[10px] sm:ml-4">
                 <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] w-[36px] lg:h-[40px] lg:w-[40px] 3xl:h-[48px] 3xl:w-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  sm:hover-btn-shadow">
                   <Image src={insta} alt="twitter" className="h-[30px]" />
                 </li>
               </Link>
-              <Link
-                href="https://discord.gg/realnobodyxyz"
-                className="ml-[10px] sm:ml-4"
-              >
+              <Link href="/" className="ml-[10px] sm:ml-4">
                 <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] w-[36px] lg:h-[40px] lg:w-[40px] 3xl:h-[48px] 3xl:w-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  sm:hover-btn-shadow">
                   <Image src={discord} alt="twitter" className="h-[30px]" />
                 </li>
               </Link>
               <li
-                className="hidden lg:flex relative items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] ml-[10px] sm:ml-4 px-2"
+                className="hidden lg:flex relative items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] ml-[10px] sm:ml-4 px-[25px]"
                 onClick={toggleLanguageDropdown}
                 ref={languagedropdownRef}
               >
-                <Image src={world} alt="world" className="max-w-[30px]" />
-                <span className="text-[16px] leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black mx-[6px]">
-                  En
+                <Image
+                  src={world}
+                  alt="world"
+                  className="max-w-[30px] w-full"
+                />
+                <span className="w-full text-[16px] leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black ">
+                  {selectedLanguage === "en" ? (
+                    "English"
+                  ) : (
+                    <div className="break-words">Japanese</div>
+                  )}
                 </span>
                 {isLanguageVisible && (
-                  <div className="absolute top-[100%] w-fit flex flex-col gap-5 bg-white rounded-[10px] py-5">
+                  <div className="absolute top-[100%] mt-3 w-fit flex flex-col gap-5 bg-white rounded-[10px] py-5">
                     <div className="flex flex-col px-5">
                       {/* /english */}
                       <div
@@ -207,18 +120,18 @@ const Header = () => {
                           English
                         </span>
                       </div>
-                      {/* /chinese */}
+                      {/* /japanese */}
                       <div
                         className="w-full flex items-center gap-2 flex-row cursor-pointer"
                         onClick={() => {
-                          handleChnage("zh");
+                          handleChnage("ja");
                         }}
                       >
                         <p className="text-[#020817] text-[21px] font-semibold">
-                          Zh
+                          Ja
                         </p>
                         <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
-                          繁體中文
+                          日本語
                         </span>
                       </div>
                     </div>
@@ -245,22 +158,26 @@ const Header = () => {
                     </div>
                   </label>
                 </div>
-                <div className="drawer-side">
+                <div className={`drawer-side`}>
                   <label
                     htmlFor="my-drawer"
                     aria-label="close sidebar"
                     className="drawer-overlay"
                   ></label>
-                  <ul className="menu w-full min-h-full px-4 bg-white overflow-y-scroll">
-                    <div className=" flex justify-between items-center mt-2">
-                      <div className=" inline-flex items-center justify-between">
-                        <Image
-                          alt="logo"
-                          src="/img/navlogo.png"
-                          className=""
-                          width={48}
-                          height={48}
-                        />
+                  <ul
+                    className={`menu w-full min-h-full px-4 bg-white overflow-y-scroll`}
+                  >
+                    <div className="flex justify-between items-center mt-2">
+                      <div className="inline-flex items-center justify-between">
+                        <Link href="/">
+                          <Image
+                            alt="logo"
+                            src="/img/navlogo.png"
+                            className=""
+                            width={80}
+                            height={80}
+                          />
+                        </Link>
                         <span className=" ml-2 text-[18px] font-semibold leading-[18px]"></span>
                       </div>
                       <label
@@ -287,26 +204,7 @@ const Header = () => {
                         </div>
                       </label>
                     </div>
-                    <div className=" my-4 mt-8"></div>
-                    {/* <Link href="/">
-                      <div className=" flex justify-between my-4 mt-1 text-[18px] font-semibold leading-[18px]  ">
-                        Manifesto
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="lucide lucide-chevron-right"
-                        >
-                          <path d="m9 18 6-6-6-6"></path>
-                        </svg>
-                      </div>
-                    </Link> */}
+                    <div className="my-4 mt-8"></div>
                     <div className="border-b-[1px] border-gray-200 my-1"></div>
                     <div className="w-full" data-orientation="vertical">
                       <div
@@ -320,71 +218,53 @@ const Header = () => {
                           className="flex"
                         >
                           <button
-                            type="button"
-                            aria-controls="radix-:r13:"
-                            aria-expanded="true"
-                            data-state="open"
-                            data-orientation="vertical"
-                            id="radix-:r12:"
                             className="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]>svg]:rotate-180 text-[18px] font-semibold leading-[18px] hover:no-underline no-underline"
                             data-radix-collection-item=""
                           >
                             Language
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 shrink-0 transition-transform duration-200"
-                            >
-                              <path d="m6 9 6 6 6-6"></path>
-                            </svg>
                           </button>
                         </h3>
-                        <div
-                          data-state="open"
-                          id="radix-:r13:"
-                          role="region"
-                          aria-labelledby="radix-:r12:"
-                          data-orientation="vertical"
-                          className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-                        >
-                          <div className="pb-4 pt-0">
-                            <div className="text-[18px] font-semibold leading-[18px] py-3">
+                        <div className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                          <div className="pb-4 pt-0 cursor-pointer">
+                            <div
+                              className={`text-[18px] font-semibold text-black leading-[18px] py-3 hover:text-yellow-400 ${
+                                selectedLanguage === "en"
+                                  ? "text-yellow-500"
+                                  : "text-black"
+                              }`}
+                              onClick={() => {
+                                handleChnage("en");
+                                handleCloseDrawer();
+                              }}
+                            >
                               English
                             </div>
-                            <div className="text-[18px] font-semibold leading-[18px] py-3">
-                              繁體中文
+                            <div
+                              className={`text-[18px] font-semibold text-black leading-[18px] py-3 hover:text-yellow-400 ${
+                                selectedLanguage === "ja"
+                                  ? "text-yellow-500"
+                                  : "text-black"
+                              }`}
+                              onClick={() => {
+                                handleChnage("ja");
+                                handleCloseDrawer();
+                              }}
+                            >
+                              日本語
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div
-                        data-state="open"
-                        data-orientation="vertical"
-                        className="border-b"
-                      >
-                        <h3
-                          data-orientation="vertical"
-                          data-state="open"
-                          className="flex"
-                        >
+                      <div className="border-b">
+                        <h3 className="flex">
                           <button
                             type="button"
                             aria-controls="radix-:r15:"
-                            aria-expanded="true"
-                            data-state="open"
-                            data-orientation="vertical"
-                            id="radix-:r14:"
-                            className="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]>svg]:rotate-180 text-[18px] font-semibold leading-[18px] hover:no-underline no-underline"
-                            data-radix-collection-item=""
+                            aria-expanded={isOpen ? "true" : "false"}
+                            onClick={toggleDrawer}
+                            className="flex flex-1 items-center justify-between py-4 transition-all text-[18px] font-semibold leading-[18px] hover:no-underline no-underline"
                           >
-                            Buy Nobody NFT
+                            QUEENGARDEN NFT
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -395,75 +275,56 @@ const Header = () => {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 shrink-0 transition-transform duration-200"
+                              className={`h-4 w-4 transition-transform duration-200 ${
+                                isOpen ? "rotate-180" : ""
+                              }`}
                             >
                               <path d="m6 9 6 6 6-6"></path>
                             </svg>
                           </button>
                         </h3>
                         <div
-                          data-state="open"
-                          id="radix-:r15:"
-                          role="region"
-                          aria-labelledby="radix-:r14:"
-                          data-orientation="vertical"
-                          className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+                          className={`overflow-hidden text-sm transition-all ${
+                            isOpen
+                              ? "block duration-500 transition-all"
+                              : "hidden"
+                          }`} // Toggle visibility using CSS classes
                         >
                           <div className="pb-4 pt-0">
-                            <a
-                              href="https://opensea.io/collection/real-nobody-xyz"
-                              target="_blank"
-                            >
-                              <div className="text-[18px] font-semibold leading-[18px] py-3">
+                            <Link href="/">
+                              <div
+                                onClick={handleCloseDrawer1}
+                                className="text-[18px] font-semibold leading-[18px] py-3 hover:text-yellow-400"
+                              >
                                 OpenSea
                               </div>
-                            </a>
-                            <a
-                              href="https://www.okx.com/web3/marketplace/nft/collection/eth/nobody"
-                              target="_blank"
-                            >
-                              <div className="text-[18px] font-semibold leading-[18px] py-3">
+                            </Link>
+                            <Link href="/">
+                              <div
+                                onClick={handleCloseDrawer1}
+                                className="text-[18px] font-semibold leading-[18px] py-3 hover:text-yellow-400"
+                              >
                                 OKX NFT
                               </div>
-                            </a>
-                            <a
-                              href="https://element.market/collections/nobody"
-                              target="_blank"
-                            >
-                              <div className="text-[18px] font-semibold leading-[18px] py-3">
+                            </Link>
+                            <Link href="/">
+                              <div
+                                onClick={handleCloseDrawer1}
+                                className="text-[18px] font-semibold leading-[18px] py-3 hover:text-yellow-400"
+                              >
                                 Element
                               </div>
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className=" mt-12">
-                      <div>
-                        <button
-                          className="hover-btn-shadow mt-[20px] flex h-[56px] w-full items-center justify-center rounded-[12px] border-2 border-black bg-[#FFD600] shadow-[4px_4px_0px_rgba(0,0,0,1)] font-semibold text-[21px]"
-                          type="button"
-                        >
-                          Connect Wallet
-                        </button>
-                      </div>
-                    </div>
+                    <div className="mt-12"></div>
                   </ul>
                 </div>
               </div>
               {/* _______________________________________ */}
-              <li className="hidden lg:block" onClick={openModal}>
-                <div className="hover-btn-shadow ml-[10px] inline-flex h-[36px] items-center justify-center rounded-[10px] border-2 border-black bg-white pr-[8px] shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:ml-4 sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] lg:h-[40px] 3xl:h-[48px]">
-                  <Link
-                    href="/"
-                    className="ml-[6px] whitespace-nowrap text-[16px] font-semibold text-black sm:text-[18px] lg:ml-[10px] 3xl:text-[21px]"
-                  >
-                    Connect Wallet
-                  </Link>
-                </div>
-              </li>
             </ul>
-            <ModalComponent isOpen={isModalOpen} closeModal={closeModal} />
           </div>
         </div>
       </div>

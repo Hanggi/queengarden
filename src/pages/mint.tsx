@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-const mint = () => {
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+const Mint = () => {
+  const { t } = useTranslation("common");
   return (
     <div className=" h-screen overflow-hidden">
       <Image
@@ -14,7 +18,7 @@ const mint = () => {
       <div className="pb-[150px] relative top-[150px] z-20 h-screen w-screen overflow-y-auto">
         <div className="w-full px-[12px] sm:px-0 sm:w-[80%] lg:w-[65%] xl:w-[1200px] mx-auto ">
           <div className="flex flex-col gap-6 mb-[100px]">
-            <div className=" xl:w-[760px] xl:h-[590px] py-[20px] px-[12px] xl:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgb(0, 0, 0)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] mx-auto">
+            <div className="w-full xl:w-[760px] xl:h-[590px] py-[20px] px-[12px] xl:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgb(0, 0, 0)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] mx-auto">
               <div className="flex relative">
                 <div className=" shrink-0 relative w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-[16px] overflow-hidden">
                   <Image
@@ -25,40 +29,39 @@ const mint = () => {
                     height={100}
                   />
                 </div>
-                <div className="flex-grow h-full ml-[20px] py-[6px] xl:ml-[30px] xl:py-[10px] flex-col justify-between">
+                <div className="flex-grow h-full ml-[10px] md:ml-[20px] py-[6px] xl:ml-[30px] xl:py-[10px] flex-col justify-between">
                   <div>
                     <h3 className="text-[21px] leading-[21px] xl:text-[24px] font-bold xl:leading-[24px] mb-2">
-                      Mint Your QUEENGARDEN NFT
+                      {t("maintitle")}
                     </h3>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Total Supply: 1000
+                      {t("totalSupply")}
                     </p>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Mainnet: Polygon
+                      {t("minnet")}
                     </p>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Price: Free + Gas Fee
+                      {t("free")}
                     </p>
                     <p className="text-[16px] xl:text-[18px] font-medium xl:font-semibold leading-[24px] xl:leading-[30px]">
-                      Maximum Mint Per Wallet Address: 1
+                      {t("max")}
                     </p>
                   </div>
                 </div>
               </div>
               <div className="w-full mt-[20px] xl:my-[30px] py-[30px] px-[12px] xl:h-[124px] bg-[rgba(255,214,0,0.2)] rounded-[12px] xl:rounded-[16px] flex flex-col lg:flex-row lg:justify-between items-center mx-auto">
                 <div className="text-[18px] leading-[24px] font-medium text-left xl:text-left mb-[20px] lg:mb-0 mx-[20px]">
-                  The mint is over now. Please connect your wallet to check if
-                  you have successfully minted the Nobody NFT.
+                  {t("over")}
                 </div>
                 <div className="shrink-0">
                   <div className="h-[56px] w-full rounded-[12px] xl:h-[64px] xl:rounded-[12px] bg-[rgba(255,214,0,1)] border-[2px] border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover-btn-shadow flex justify-center items-center text-[21px] xl:text-[24px] leading-[21px] xl:leading-[24px] font-semibold min-w-[240px] xl:min-w-[260px]">
-                    Connect Wallet
+                    {t("cw")}
                   </div>
                 </div>
               </div>
               <div className="hidden lg:block mt-[20px] xl:mt-0 mx-auto">
                 <p>
-                  QUEENGARDEN NFT Smart Contract Information&nbsp;&nbsp;
+                  {t("information")}&nbsp;&nbsp;
                   <Link
                     href="https://etherscan.io/address/0x129d453253dbCE5CF6997DB8Fb461B2A20Fd275F"
                     target="__blank"
@@ -71,103 +74,91 @@ const mint = () => {
             </div>
             <div className="overflow-visible w-full xl:w-[760px] sm:h-[390px] overflow-y-scroll p-4 lg:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] mt-[20px] xl:mt-0 mx-auto">
               <h3 className=" sm:text-black text-[21px] sm:text-[24px] font-bold leading-6 mb-[20px] mt-[30px] sm:mt-0">
-                Minted XXXX/1000
+                {t("minttitle")}
               </h3>
               <div>
                 <h4 className="text-[20px] sm:text-[22px] font-semibold mb-4">
-                  Minting Schedule
+                  {t("mintschedule")}
                 </h4>
                 <p className="text-[18px] font-medium leading-[30px]">
-                  Allowlist
+                  {t("Allowlist")}
                   <br />
-                  March 31, 8 PM - April 1, 8 PM (UTC+9)
+                  {t("p1")}
                   <br />
-                  Public
+                  {t("p2")}
                   <br />
-                  April 1, 9 PM (UTC+9) - April 2, 9 PM (UTC+9)
+                  {t("p3")}
                   <br />
                   <br />
-                  Minting Rules
+                  {t("p4")}
                   <br />
                   <br />
                 </p>
                 <p className="text-[18px] font-medium leading-[30px]">
-                  1. Minting Phase:
+                  {t("phase")}
                   <br />
-                  March 31, 2024, 8:00 PM (UTC+9) - April 1, 2024, 8:00 PM
-                  (UTC+9).
-                  <br />
-                  <br />
-                  2. Minting price:
-                  <br />
-                  Free + Gas Fee
+                  {t("m1")}
                   <br />
                   <br />
-                  3. Total Supply:
+                  {t("m2")}
                   <br />
-                  1,000 QUEENGARDEN NFTs
+                  {t("m3")}
                   <br />
+                  {t("m4")}
                   <br />
-                  4. Available QUEENGARDEN NFTs for Minting and Allowlists:
-                  <br />
-                  Both are 800.
-                  <br />
-                  <br />
-                  The remaining 200 NFTs will be distributed as follows:
-                  <br />
-                  Investors: 50
-                  <br />
-                  Team: 20
-                  <br />
-                  Treasury: 80
-                  <br />
-                  Community Development Fund: 50.
+                  {t("m5")}
                   <br />
                   <br />
-                  After minting ends, any remaining QUEENGARDEN NFTs will be
-                  allocated to the Treasury.
+                  {t("m6")}
+                  <br />
+                  {t("m7")}
                   <br />
                   <br />
-                  5. Who is eligible to mint?
+                  {t("m8")}
                   <br />
-                  Everyone can participate in QUEENGARDEN NFT minting. Please
-                  log in to https://queengardennft.com/ and verify your
-                  allowlist eligibility through wallet connection.
+                  {t("m9")}
                   <br />
+                  {t("m10")}
                   <br />
-                  • Allowlists: Given the highest priority, they can guarantee
-                  QUEENGARDEN NFTs if they successfully minting during the
-                  allowlist phase. <br />
+                  {t("m11")}
                   <br />
-                  • Non-Allowlists: Can participate in minting during the public
-                  phase.
+                  {t("m12")}
                   <br />
                   <br />
-                  6. How many QUEENGARDEN NFTs can be minted per wallet?
-                  <br />
-                  Each wallet address can only mint 1 QUEENGARDEN NFT at most.
+                  {t("m13")}
                   <br />
                   <br />
-                  7. Which wallet address should I use for minting?
+                  {t("m14")}
                   <br />
-                  If you are on the allowlist, please use the wallet address
-                  eligible for allowlist minting.
-                  <br />
-                  If you are not on the allowlist, you can use any ERC-20 wallet
-                  address for minting.
+                  {t("m15")}
                   <br />
                   <br />
-                  8. Reveal Date:
-                  <br />
-                  April 14, 2024.
+                  {t("m16")}
                   <br />
                   <br />
-                  9. What is the creation fee (royalty), and how will it be
-                  used?
+                  {t("m17")}
                   <br />
-                  5%. We will allocate the funds to hire more full-time team
-                  members, support operations, and provide more value to our
-                  community.
+                  <br />
+                  {t("m18")}
+                  <br />
+                  {t("m19")}
+                  <br />
+                  <br />
+                  {t("m20")}
+                  <br />
+                  {t("m21")}
+                  <br />
+                  {t("m22")}
+                  <br />
+                  <br />
+                  {t("m23")}
+                  <br />
+                  {t("m24")}
+                  <br />
+                  <br />
+                  {t("m25")}
+                  <br />
+                  {t("m26")}
                   <br />
                   <br />
                 </p>
@@ -180,4 +171,12 @@ const mint = () => {
   );
 };
 
-export default mint;
+export default Mint;
+export async function getStaticProps(context: any) {
+  const { locale } = context;
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
