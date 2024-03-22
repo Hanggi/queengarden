@@ -17,6 +17,7 @@ const config = getDefaultConfig({
   projectId: "5c3146bd8b64bfd475c3a7518f8fcf4e",
   chains: [polygon, polygonMumbai],
   ssr: true,
+
 });
 
 const queryClient = new QueryClient();

@@ -11,6 +11,7 @@ export default function MyConnectButton() {
   const chainId = useChainId();
   const { chains, switchChain } = useSwitchChain();
 
+  console.log(chainId, CHAIN_ID);
   return (
     <div
       className={
