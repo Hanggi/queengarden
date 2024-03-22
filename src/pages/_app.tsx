@@ -1,4 +1,4 @@
-import Header from "@/Components/Shared/Header";
+import Header from "@/Components/Shared/Header"
 import "@fontsource/inter";
 import { RainbowKitProvider, getDefaultConfig } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
@@ -11,9 +11,9 @@ import { WagmiProvider } from "wagmi";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import "../../i18n";
-function App({ Component, pageProps }: AppProps) {
-
 import "../styles/globals.css";
+
+
 
 const config = getDefaultConfig({
   appName: "Queen Garden",
@@ -25,7 +25,7 @@ const config = getDefaultConfig({
 
 const queryClient = new QueryClient();
 
-export default function App({ Component, pageProps }: AppProps) {
+ function App({ Component, pageProps }: AppProps) {
   return (
     <div>
       <WagmiProvider config={config}>

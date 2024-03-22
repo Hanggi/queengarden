@@ -8,7 +8,7 @@ const Sticky = () => {
   const { t } = useTranslation("common");
   return (
     <div>
-      <div className="absolute bottom-0 left-0 right-0 z-50 lg:h-[88px] w-full flex flex-col gap-10 lg:gap-0 lg:flex-row lg:items-center justify-center bg-black lg:bg-black/80 px-[20px] 4xl:h-[112px] 4xl:px-[30px] py-10 lg:py-0">
+      <div className="absolute top-full lg:bottom-0 left-0 right-0 z-50 lg:h-[88px] w-full flex flex-col gap-10 lg:gap-0 lg:flex-row lg:items-center bg-black lg:bg-black/80 px-[20px] 4xl:h-[112px] 4xl:px-[30px] py-10 lg:py-0">
         <div className="flex">
           <Image
             alt="now"
@@ -19,7 +19,7 @@ const Sticky = () => {
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold text-white 4xl:text-[24px]">
-              Allowlist
+              {t('Allowlist')}
             </span>
             <span className="text-base  lg:text-[14px] font-semibold text-white 4xl:text-[18px]">
               March 31, 8 PM - April 1, 8 PM (UTC+9)
@@ -36,7 +36,7 @@ const Sticky = () => {
           />
           <div className="ml-[10px] flex flex-col justify-center 4xl:ml-[20px]">
             <span className="text-[21px] lg:text-[18px] font-semibold 4xl:text-[24px]">
-              Public
+              {t('p2')}
             </span>
             <span className="text-base lg:text-[14px] font-semibold 4xl:text-[18px]">
               April 1, 9 PM (UTC+9) - April 2, 9 PM (UTC+9)

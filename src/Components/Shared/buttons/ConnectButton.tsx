@@ -18,7 +18,7 @@ export default function MyConnectButton() {
         "lg:h-[40px]  lg:w-[160px] 3xl:h-[48px] 3xl:w-[190px] " +
         "rounded-[10px] border-black border-2 bg-white " +
         "shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:hover-btn-shadow " +
-        "text-center cursor-pointer"
+        "text-center cursor-pointer max-xl:p-2"
       }
     >
       {isConnected && chainId == CHAIN_ID && (
