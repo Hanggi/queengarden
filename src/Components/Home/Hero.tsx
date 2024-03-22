@@ -1,20 +1,21 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+
+import React from "react";
 
 const Hero = () => {
   const { t } = useTranslation("common");
 
   return (
-    <>
+    <div>
       <section className="relative h-screen w-full">
         <div className="absolute inset-0 top-0 left-0 bottom-0 right-0">
           <Image
-            src="/img/homebg.png"
             alt="home"
             className="object-cover"
-            layout="fill"
+            fill
+            src="/img/homebg.png"
           />
         </div>
         <div className="absolute bottom-[15%] z-10 flex lg:hidden w-full flex-col px-[15px]">
@@ -27,7 +28,7 @@ const Hero = () => {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

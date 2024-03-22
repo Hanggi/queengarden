@@ -1,8 +1,7 @@
 import React from "react";
-import Hero from "./Hero";
-import Community from "./Community";
-import Talk from "./Talk";
+
 import Sticky from "../Shared/Sticky";
+import Hero from "./Hero";
 
 const HomeMain = () => {
   return (

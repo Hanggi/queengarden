@@ -34,7 +34,7 @@ const ModalComponent: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
                 className="cursor-pointer text-xl bg-gray-200 rounded-full p-2 ml-auto"
                 onClick={closeModal}
               >
-                <Image src={close} alt="close" height={14} width={14} />
+                <Image alt="close" height={14} src={close} width={14} />
               </div>
             </div>
             {/* content */}

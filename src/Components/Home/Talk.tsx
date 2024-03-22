@@ -15,10 +15,10 @@ const Talk = () => {
             <div className="flex flex-col items-center justify-center max-lg:order-1">
               <Image
                 alt="friend"
-                width="2721"
-                height="1986"
                 className="w-full object-cover"
+                height="1986"
                 src="/img/talk.webp"
+                width="2721"
               />
             </div>
           </div>

@@ -39,11 +39,11 @@ const Tab = () => {
             <div className="rounded-md bg-opacity-50 backdrop-filter backdrop-blur-md z-10 grid h-[100px] grid-cols-5 bg-[#FFD600]">
               {[r1, r2, r3, r4, r5].map((thumbnail, index) => (
                 <div
-                  key={index}
                   className="px-2 lg:px-4 w-full"
+                  key={index}
                   onClick={() => handleClick(thumbnail.src)}
                 >
-                  <Image src={thumbnail} alt={`r${index + 1}`} className="" />
+                  <Image alt={`r${index + 1}`} className="" src={thumbnail} />
                 </div>
               ))}
             </div>
@@ -52,9 +52,9 @@ const Tab = () => {
           <div className="p-5 lg:pt-10 xl:pt-14 3xl:pt-16 w-full">
             {/* IMAGE WHICH IS ACTIVE */}
             <Image
-              src={selectedImage}
               alt="selected-image"
               className="w-full object-contain"
+              src={selectedImage}
             />
             <form className="w-full relative">
               <input

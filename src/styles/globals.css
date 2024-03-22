@@ -4,21 +4,49 @@
 
 .hover-btn-shadow {
   cursor: pointer;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-duration: .15s;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    backdrop-filter,
+    -webkit-backdrop-filter;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-btn-shadow:hover {
   --tw-translate-x: 0.25rem;
   --tw-translate-y: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .drawer {
@@ -26,12 +54,12 @@
   display: grid;
   grid-auto-columns: max-content auto;
   width: 100%;
-  z-index: 1000
+  z-index: 1000;
 }
 
 .drawer-content {
   grid-column-start: 2;
-  grid-row-start: 1
+  grid-row-start: 1;
 }
 
 .drawer-side {
@@ -51,42 +79,68 @@
   overscroll-behavior: contain;
   height: 100vh;
   height: 100dvh;
-  scrollbar-width: none
+  scrollbar-width: none;
 }
 
 .drawer-side::-webkit-scrollbar {
-  display: none
+  display: none;
 }
 
-.drawer-side>.drawer-overlay {
+.drawer-side > .drawer-overlay {
   position: sticky;
   top: 0;
   place-self: stretch;
   cursor: pointer;
   background-color: transparent;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-timing-function: cubic-bezier(0, 0, .2, 1);
-  transition-duration: .2s
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 0.2s;
 }
 
-.drawer-side>* {
+.drawer-side > * {
   grid-column-start: 1;
-  grid-row-start: 1
+  grid-row-start: 1;
 }
 
-.drawer-side>:not(.drawer-overlay) {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-timing-function: cubic-bezier(0, 0, .2, 1);
-  transition-duration: .3s;
-  transform: translateX(-100%)
+.drawer-side > :not(.drawer-overlay) {
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    backdrop-filter,
+    -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 0.3s;
+  transform: translateX(-100%);
 }
 
-[dir=rtl] .drawer-side>:not(.drawer-overlay) {
-  transform: translateX(100%)
+[dir="rtl"] .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(100%);
 }
 
 .drawer-toggle {
@@ -96,34 +150,34 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  opacity: 0
+  opacity: 0;
 }
 
-.drawer-toggle:checked~.drawer-side {
+.drawer-toggle:checked ~ .drawer-side {
   pointer-events: auto;
-  visibility: visible
+  visibility: visible;
 }
 
-.drawer-toggle:checked~.drawer-side>:not(.drawer-overlay) {
-  transform: translateX(0)
+.drawer-toggle:checked ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(0);
 }
 
-.drawer-end .drawer-toggle~.drawer-content {
-  grid-column-start: 1
+.drawer-end .drawer-toggle ~ .drawer-content {
+  grid-column-start: 1;
 }
 
-.drawer-end .drawer-toggle~.drawer-side {
-  justify-items: end
+.drawer-end .drawer-toggle ~ .drawer-side {
+  justify-items: end;
 }
 
-.drawer-end .drawer-toggle~.drawer-side>:not(.drawer-overlay) {
-  transform: translateX(100%)
+.drawer-end .drawer-toggle ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(100%);
 }
 
-[dir=rtl] .drawer-end .drawer-toggle~.drawer-side>:not(.drawer-overlay) {
-  transform: translateX(-100%)
+[dir="rtl"] .drawer-end .drawer-toggle ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(-100%);
 }
 
-.drawer-end .drawer-toggle:checked~.drawer-side>:not(.drawer-overlay) {
-  transform: translateX(0)
+.drawer-end .drawer-toggle:checked ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(0);
 }
