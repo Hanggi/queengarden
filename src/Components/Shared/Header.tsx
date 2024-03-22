@@ -74,7 +74,6 @@ const Header = () => {
 
   const handleChnage = (locale: any) => {
     route.push(route.pathname, route.asPath, { locale });
-    console.log(route.pathname, route.asPath);
   };
 
   const handleClickOutside = (event: MouseEvent) => {

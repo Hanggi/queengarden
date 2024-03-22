@@ -11,7 +11,6 @@ export default function MyConnectButton() {
   const chainId = useChainId();
   const { chains, switchChain } = useSwitchChain();
 
-  console.log(chainId, CHAIN_ID);
   return (
     <div
       className={
@@ -22,7 +21,7 @@ export default function MyConnectButton() {
         "text-center cursor-pointer"
       }
     >
-      {isConnected && (
+      {isConnected && chainId == CHAIN_ID && (
         <Typography className="!font-bold text-black" level="title-lg">
           {address?.slice(0, 6) + "..." + address?.slice(-4)}
         </Typography>
@@ -50,7 +49,6 @@ export default function MyConnectButton() {
             className="!font-bold text-black"
             level="title-lg"
             onClick={() => {
-              console.log("openConnectModal", openConnectModal);
               openConnectModal && openConnectModal();
             }}
           >
