@@ -9,10 +9,10 @@ const Mint = () => {
   return (
     <div className=" h-screen overflow-hidden">
       <Image
-        src="/img/homebg.png"
         alt="homrbg"
-        layout="fill"
         className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0 object-cover"
+        layout="fill"
+        src="/img/homebg.png"
       />
       <div className="absolute h-screen w-screen backdrop-blur z-10"></div>
       <div className="pb-[150px] relative top-[150px] z-20 h-screen w-screen overflow-y-auto">
@@ -22,11 +22,11 @@ const Mint = () => {
               <div className="flex relative">
                 <div className=" shrink-0 relative w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-[16px] overflow-hidden">
                   <Image
-                    src="/img/Blind512.gif"
                     alt="image animation"
                     className="w-full h-full"
-                    width={100}
                     height={100}
+                    src="/img/Blind512.gif"
+                    width={100}
                   />
                 </div>
                 <div className="flex-grow h-full ml-[10px] md:ml-[20px] py-[6px] xl:ml-[30px] xl:py-[10px] flex-col justify-between">
@@ -63,9 +63,9 @@ const Mint = () => {
                 <p>
                   {t("information")}&nbsp;&nbsp;
                   <Link
+                    className=" text-[rgba(59,132,255,1)] underline"
                     href="https://etherscan.io/address/0x129d453253dbCE5CF6997DB8Fb461B2A20Fd275F"
                     target="__blank"
-                    className=" text-[rgba(59,132,255,1)] underline"
                   >
                     0x129d453253dbCE5CF6997DB8Fb461B2A20Fd275F
                   </Link>

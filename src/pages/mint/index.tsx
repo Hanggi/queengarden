@@ -1,4 +1,4 @@
-import MintActions from "@/Components/mint/MintActions";
+import MintActions from "@/Components/mintAction/MintActions";
 
 import Image from "next/image";
 import Link from "next/link";
