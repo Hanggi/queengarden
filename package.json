@@ -15,10 +15,12 @@
     "@mui/joy": "^5.0.0-beta.32",
     "@rainbow-me/rainbowkit": "^2.0.2",
     "@tanstack/react-query": "^5.28.6",
+    "i18next": "^23.10.1",
     "next": "14.1.4",
     "next-i18next": "^15.2.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-i18next": "^14.1.0",
     "remixicon": "^4.2.0",
     "sharp": "^0.33.2",
     "viem": "2.x",
@@ -38,5 +40,6 @@
     "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
