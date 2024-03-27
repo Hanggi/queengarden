@@ -1,14 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "next-i18next";
+
 import Dropdown from "@mui/joy/Dropdown";
 import Menu from "@mui/joy/Menu";
 import MenuButton from "@mui/joy/MenuButton";
 import MenuItem from "@mui/joy/MenuItem";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import world from "../../../public/img/world.svg"
-import hamburger from "../../../public/img/hamburger.svg"
+
+import React, { useEffect, useRef, useState } from "react";
+
+import hamburger from "../../../public/img/hamburger.svg";
+import world from "../../../public/img/world.svg";
 import MyConnectButton from "./buttons/ConnectButton";
 import ShadowButton from "./buttons/ShadowButton";
 
@@ -16,12 +20,7 @@ function Logo() {
   return (
     <Link href="/">
       <div className="relative ml-[0px] h-[56px] w-[56px] sm:ml-[0px] lg:h-[80px] lg:w-[80px]">
-        <Image
-          alt="logo"
-          className="object-cover"
-          fill
-          src="/img/navlogo.png"
-        />
+        <Image alt="logo" className="object-cover" fill src="/img/logo.png" />
       </div>
     </Link>
   );
@@ -46,7 +45,7 @@ function NavButtons() {
     setSelectedLanguage(locale);
     setIsLanguageVisible(false);
   };
- useEffect(() => {
+  useEffect(() => {
     document.addEventListener("click", handleClickOutsideLanguage);
     return () => {
       document.removeEventListener("click", handleClickOutsideLanguage);
@@ -77,57 +76,49 @@ function NavButtons() {
         </Menu>
       </Dropdown>
       <li
-          className="hidden lg:flex relative items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  px-[25px]"
-            ref={languagedropdownRef}
-          onClick={toggleLanguageDropdown}
+        className="hidden lg:flex relative items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  px-[25px]"
+        ref={languagedropdownRef}
+        onClick={toggleLanguageDropdown}
+      >
+        <Image alt="world" className="max-w-[30px] w-full" src={world} />
+        <span className="w-full text-[16px] leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black ">
+          {selectedLanguage === "en" ? (
+            "English"
+          ) : (
+            <div className="break-words">Japanese</div>
+          )}
+        </span>
+        {isLanguageVisible && (
+          <div className="absolute top-[100%] mt-3 w-fit flex flex-col gap-5 bg-white rounded-[10px] py-5">
+            <div className="flex flex-col px-5">
+              {/* /english */}
+              <div
+                className="w-full flex items-center gap-2 flex-row cursor-pointer"
+                onClick={() => {
+                  handleChnage("en");
+                }}
               >
-                <Image
-                  alt="world"
-                  className="max-w-[30px] w-full"
-                  src={world}
-                />
-                <span className="w-full text-[16px] leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black ">
-                  {selectedLanguage === "en" ? (
-                    "English"
-                  ) : (
-                    <div className="break-words">Japanese</div>
-                  )}
+                <p className="text-[#020817] text-[21px] font-semibold">En</p>
+                <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
+                  English
                 </span>
-                {isLanguageVisible && (
-                  <div className="absolute top-[100%] mt-3 w-fit flex flex-col gap-5 bg-white rounded-[10px] py-5">
-                    <div className="flex flex-col px-5">
-                      {/* /english */}
-                      <div
-                        className="w-full flex items-center gap-2 flex-row cursor-pointer"
-                        onClick={() => {
-                          handleChnage("en");
-                        }}
-                      >
-                        <p className="text-[#020817] text-[21px] font-semibold">
-                          En
-                        </p>
-                        <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
-                          English
-                        </span>
-                      </div>
-                      {/* /japanese */}
-                      <div
-                        className="w-full flex items-center gap-2 flex-row cursor-pointer"
-                        onClick={() => {
-                          handleChnage("ja");
-                        }}
-                      >
-                        <p className="text-[#020817] text-[21px] font-semibold">
-                          Ja
-                        </p>
-                        <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
-                          日本語
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </li>
+              </div>
+              {/* /japanese */}
+              <div
+                className="w-full flex items-center gap-2 flex-row cursor-pointer"
+                onClick={() => {
+                  handleChnage("ja");
+                }}
+              >
+                <p className="text-[#020817] text-[21px] font-semibold">Ja</p>
+                <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
+                  日本語
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+      </li>
       <MyConnectButton />
     </div>
   );
@@ -144,7 +135,7 @@ const Header = () => {
   const languagedropdownRef = useRef<HTMLLIElement>(null);
   const toggleDropdown = () => setIsDropdownVisible(!isDropdownVisible);
   const dropdownRef = useRef<HTMLLIElement>(null);
- 
+
   const handleClickOutside = (event: MouseEvent) => {
     if (
       dropdownRef.current &&
@@ -166,12 +157,12 @@ const Header = () => {
   };
   const handleCloseDrawer = (): void => {
     const drawerCheckbox = document.getElementById(
-      "my-drawer"
+      "my-drawer",
     ) as HTMLInputElement;
     if (drawerCheckbox) {
       drawerCheckbox.checked = false;
     }
-  }
+  };
   const handleClickOutsideLanguage = (event: MouseEvent) => {
     if (
       languagedropdownRef.current &&
@@ -203,10 +194,10 @@ const Header = () => {
             <Link className="inline-flex items-center" href="/">
               <Image
                 alt="navbar"
-                className="w-full max-w-[100px]"
-                height={100}
-                src="/img/navlogo.png"
-                width={100}
+                className="w-full max-w-[100px] py-4"
+                height={64}
+                src="/img/logo.png"
+                width={64}
               />
             </Link>
             <ul className="flex items-center">
@@ -311,7 +302,7 @@ const Header = () => {
                             alt="logo"
                             className=""
                             height={80}
-                            src="/img/navlogo.png"
+                            src="/img/logo.png"
                             width={80}
                           />
                         </Link>
@@ -425,7 +416,7 @@ const Header = () => {
                             isOpen
                               ? "block duration-500 transition-all"
                               : "hidden"
-                          }`} 
+                          }`}
                         >
                           <div className="pb-4 pt-0">
                             <Link href="/">
@@ -456,7 +447,7 @@ const Header = () => {
                         </div>
                       </div>
                       <div className="my-2">
-                      <MyConnectButton  />
+                        <MyConnectButton />
                       </div>
                     </div>
                     <div className="mt-12"></div>
@@ -467,7 +458,7 @@ const Header = () => {
             </ul>
             {/* <Logo /> */}
             <div className="hidden lg:block">
-              <NavButtons  />
+              <NavButtons />
             </div>
           </div>
         </div>
@@ -476,5 +467,3 @@ const Header = () => {
   );
 };
 export default Header;
-
-

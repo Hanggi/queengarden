@@ -1,8 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+import Image from "next/image";
+import Link from "next/link";
+
+import React from "react";
 
 const Mint = () => {
   const { t } = useTranslation("common");
@@ -10,9 +12,15 @@ const Mint = () => {
     <div className=" h-screen overflow-hidden">
       <Image
         alt="homrbg"
-        className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0 object-cover"
+        className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0 object-cover block md:hidden"
         layout="fill"
-        src="/img/homebg.png"
+        src="/img/homebg-mobile.jpg"
+      />
+      <Image
+        alt="homrbg"
+        className="absolute h-full w-full inset-0 left-0 right-0 bottom-0 top-0 object-cover hidden md:block"
+        layout="fill"
+        src="/img/homebg.jpg"
       />
       <div className="absolute h-screen w-screen backdrop-blur z-10"></div>
       <div className="pb-[150px] relative top-[150px] z-20 h-screen w-screen overflow-y-auto">

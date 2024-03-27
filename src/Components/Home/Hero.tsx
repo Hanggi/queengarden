@@ -14,9 +14,15 @@ const Hero = () => {
         <div className="absolute inset-0 top-0 left-0 bottom-0 right-0">
           <Image
             alt="home"
-            className="object-cover"
+            className="object-cover block md:hidden"
             fill
-            src="/img/homebg.png"
+            src="/img/homebg-mobile.jpg"
+          />
+          <Image
+            alt="home"
+            className="object-cover hidden md:block"
+            fill
+            src="/img/homebg.jpg"
           />
         </div>
         <div className="absolute bottom-[15%] z-10 flex lg:hidden w-full flex-col px-[15px]">
