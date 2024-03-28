@@ -59,11 +59,12 @@ const Mint = () => {
               </div>
               <div className="w-full mt-[20px] xl:my-[30px] py-[30px] px-[12px] xl:h-[124px] bg-[rgba(255,214,0,0.2)] rounded-[12px] xl:rounded-[16px] flex flex-col lg:flex-row lg:justify-between items-center mx-auto">
                 <div className="text-[18px] leading-[24px] font-medium text-left xl:text-left mb-[20px] lg:mb-0 mx-[20px]">
-                  {t("over")}
+                  The mint is over now. Please connect your wallet to check if
+                  you have successfully minted the QUEENGARDEN NFT.
                 </div>
                 <div className="shrink-0">
                   <div className="h-[56px] w-full rounded-[12px] xl:h-[64px] xl:rounded-[12px] bg-[rgba(255,214,0,1)] border-[2px] border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover-btn-shadow flex justify-center items-center text-[21px] xl:text-[24px] leading-[21px] xl:leading-[24px] font-semibold min-w-[240px] xl:min-w-[260px]">
-                    {t("cw")}
+                    Connect Wallet
                   </div>
                 </div>
               </div>
@@ -123,15 +124,6 @@ const Mint = () => {
                   <br />
                   <br />
                   {t("m8")}
-                  <br />
-                  {t("m9")}
-                  <br />
-                  {t("m10")}
-                  <br />
-                  {t("m11")}
-                  <br />
-                  {t("m12")}
-                  <br />
                   <br />
                   {t("m13")}
                   <br />

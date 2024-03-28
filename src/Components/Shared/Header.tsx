@@ -84,8 +84,12 @@ function NavButtons() {
         <span className="w-full text-[16px] leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black ">
           {selectedLanguage === "en" ? (
             "English"
-          ) : (
+          ) : selectedLanguage === "ja" ? (
             <div className="break-words">Japanese</div>
+          ) : selectedLanguage === "zh" ? (
+            <div className="break-words">繁体中文</div>
+          ) : (
+            ""
           )}
         </span>
         {isLanguageVisible && (
@@ -113,6 +117,18 @@ function NavButtons() {
                 <p className="text-[#020817] text-[21px] font-semibold">Ja</p>
                 <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
                   日本語
+                </span>
+              </div>
+              {/* chinese */}
+              <div
+                className="w-full flex items-center gap-2 flex-row cursor-pointer"
+                onClick={() => {
+                  handleChnage("zh");
+                }}
+              >
+                <p className="text-[#020817] text-[21px] font-semibold">Zh</p>
+                <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
+                  繁体中文
                 </span>
               </div>
             </div>
@@ -201,71 +217,6 @@ const Header = () => {
               />
             </Link>
             <ul className="flex items-center">
-              {/* <Link href="/" target="_blank" className="ml-[10px] sm:ml-4">
-                <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] w-[36px] lg:h-[40px] lg:w-[40px] 3xl:h-[48px] 3xl:w-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:hover-btn-shadow ">
-                  <Image src={twitter} alt="twitter" className="h-[30px]" />
-                </li>
-              </Link> */}
-              {/* <Link href="/" className="ml-[10px] sm:ml-4">
-                <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] w-[36px] lg:h-[40px] lg:w-[40px] 3xl:h-[48px] 3xl:w-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  sm:hover-btn-shadow">
-                  <Image src={insta} alt="twitter" className="h-[30px]" />
-                </li>
-              </Link> */}
-              {/* <Link href="/" className="ml-[10px] sm:ml-4">
-                <li className="hover-btn-shadow inline-flex items-center justify-center h-[36px] w-[36px] lg:h-[40px] lg:w-[40px] 3xl:h-[48px] 3xl:w-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  sm:hover-btn-shadow">
-                  <Image src={discord} alt="twitter" className="h-[30px]" />
-                </li>
-              </Link> */}
-              {/* <li
-                className="hidden lg:flex relative items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] ml-[10px] sm:ml-4 px-[25px]"
-                onClick={toggleLanguageDropdown}
-                ref={languagedropdownRef}
-              >
-                <Image
-                  src={world}
-                  alt="world"
-                  className="max-w-[30px] w-full"
-                />
-                <span className="w-full text-[16px] leading-[16px] sm:text-[18px] sm:leading-[18px] 3xl:text-[21px] 3xl:leading-[21px] font-semibold text-black ">
-                  {selectedLanguage === "en" ? (
-                    "English"
-                  ) : (
-                    <div className="break-words">Japanese</div>
-                  )}
-                </span>
-                {isLanguageVisible && (
-                  <div className="absolute top-[100%] mt-3 w-fit flex flex-col gap-5 bg-white rounded-[10px] py-5">
-                    <div className="flex flex-col px-5">
-                      <div
-                        className="w-full flex items-center gap-2 flex-row cursor-pointer"
-                        onClick={() => {
-                          handleChnage("en");
-                        }}
-                      >
-                        <p className="text-[#020817] text-[21px] font-semibold">
-                          En
-                        </p>
-                        <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
-                          English
-                        </span>
-                      </div>
-                      <div
-                        className="w-full flex items-center gap-2 flex-row cursor-pointer"
-                        onClick={() => {
-                          handleChnage("ja");
-                        }}
-                      >
-                        <p className="text-[#020817] text-[21px] font-semibold">
-                          Ja
-                        </p>
-                        <span className="text-[#020817] text-[16px] leading-[16px] font-medium">
-                          日本語
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </li> */}
               {/* _______________________________________ */}
               <div className="drawer w-auto">
                 <input
@@ -380,72 +331,23 @@ const Header = () => {
                             >
                               日本語
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="border-b">
-                        <h3 className="flex">
-                          <button
-                            aria-controls="radix-:r15:"
-                            aria-expanded={isOpen ? "true" : "false"}
-                            className="flex flex-1 items-center justify-between py-4 transition-all text-[18px] font-semibold leading-[18px] hover:no-underline no-underline"
-                            type="button"
-                            onClick={toggleDrawer}
-                          >
-                            QUEENGARDEN NFT
-                            <svg
-                              className={`h-4 w-4 transition-transform duration-200 ${
-                                isOpen ? "rotate-180" : ""
+                            <div
+                              className={`text-[18px] font-semibold text-black leading-[18px] py-3 hover:text-yellow-400 ${
+                                selectedLanguage === "zh"
+                                  ? "text-yellow-500"
+                                  : "text-black"
                               }`}
-                              fill="none"
-                              height="24"
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              viewBox="0 0 24 24"
-                              width="24"
-                              xmlns="http://www.w3.org/2000/svg"
+                              onClick={() => {
+                                handleChnage("zh");
+                                handleCloseDrawer();
+                              }}
                             >
-                              <path d="m6 9 6 6 6-6"></path>
-                            </svg>
-                          </button>
-                        </h3>
-                        <div
-                          className={`overflow-hidden text-sm transition-all ${
-                            isOpen
-                              ? "block duration-500 transition-all"
-                              : "hidden"
-                          }`}
-                        >
-                          <div className="pb-4 pt-0">
-                            <Link href="/">
-                              <div
-                                className="text-[18px] font-semibold leading-[18px] py-3 hover:text-yellow-400"
-                                onClick={handleCloseDrawer1}
-                              >
-                                OpenSea
-                              </div>
-                            </Link>
-                            <Link href="/">
-                              <div
-                                className="text-[18px] font-semibold leading-[18px] py-3 hover:text-yellow-400"
-                                onClick={handleCloseDrawer1}
-                              >
-                                OKX NFT
-                              </div>
-                            </Link>
-                            <Link href="/">
-                              <div
-                                className="text-[18px] font-semibold leading-[18px] py-3 hover:text-yellow-400"
-                                onClick={handleCloseDrawer1}
-                              >
-                                Element
-                              </div>
-                            </Link>
+                              繁体中文
+                            </div>
                           </div>
                         </div>
                       </div>
+
                       <div className="my-2">
                         <MyConnectButton />
                       </div>
