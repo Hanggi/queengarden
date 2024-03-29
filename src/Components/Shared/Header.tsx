@@ -67,18 +67,25 @@ function NavButtons() {
         </ShadowButton>
       </Link>
 
-      <Dropdown>
+      <Link
+        href="https://shinqueen.com?agent=JetyI&code=p6jxmx"
+        target="_blank"
+      >
+        <ShadowButton>
+          <i className="ri-global-line text-3xl"></i>
+        </ShadowButton>
+      </Link>
+      {/* <Dropdown>
         <MenuButton
           slots={{ root: ShadowButton }}
           // slotProps={{ root: { variant: "outlined", color: "neutral" } }}
         >
-          <i className="ri-global-line text-3xl"></i>
         </MenuButton>
         <Menu>
           <MenuItem>Add item</MenuItem>
           <MenuItem>Add item2</MenuItem>
         </Menu>
-      </Dropdown>
+      </Dropdown> */}
       <li
         className="hidden lg:flex relative items-center justify-center h-[36px] lg:h-[40px] 3xl:h-[48px] rounded-[10px] border-black border-2 bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)]  px-[25px]"
         ref={languagedropdownRef}
@@ -214,10 +221,10 @@ const Header = () => {
             <Link className="inline-flex items-center" href="/">
               <Image
                 alt="navbar"
-                className="w-full max-w-[100px] py-4"
+                className="w-full max-w-[200px] py-4"
                 height={64}
-                src="/img/logo.png"
-                width={64}
+                src="/img/logo2.png"
+                width={200}
               />
             </Link>
             <ul className="flex items-center">
@@ -348,6 +355,56 @@ const Header = () => {
                             >
                               繁体中文
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="border-b"
+                        data-orientation="vertical"
+                        data-state="open"
+                      >
+                        <h3
+                          className="flex"
+                          data-orientation="vertical"
+                          data-state="open"
+                        >
+                          <button
+                            className="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]>svg]:rotate-180 text-[18px] font-semibold leading-[18px] hover:no-underline no-underline"
+                            data-radix-collection-item=""
+                          >
+                            Links
+                          </button>
+                        </h3>
+                        <div className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                          <div className="pb-4 pt-0 flex gap-4">
+                            <Link
+                              href="https://twitter.com/QueenGardenNFT"
+                              target="_blank"
+                            >
+                              <ShadowButton>
+                                <i className="ri-twitter-x-fill text-2xl"></i>
+                              </ShadowButton>
+                            </Link>
+                            {/* <ShadowButton>
+        <i className="ri-instagram-fill text-3xl"></i>
+      </ShadowButton> */}
+                            <Link
+                              href="https://discord.gg/queengarden"
+                              target="_blank"
+                            >
+                              <ShadowButton>
+                                <i className="ri-discord-fill text-3xl"></i>
+                              </ShadowButton>
+                            </Link>
+
+                            <Link
+                              href="https://shinqueen.com?agent=JetyI&code=p6jxmx"
+                              target="_blank"
+                            >
+                              <ShadowButton>
+                                <i className="ri-global-line text-3xl"></i>
+                              </ShadowButton>
+                            </Link>
                           </div>
                         </div>
                       </div>
