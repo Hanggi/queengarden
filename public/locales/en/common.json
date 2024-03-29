@@ -1,4 +1,8 @@
 {
+  "hint": {
+    "youAreInWhiteList": "You are in the allowlist.",
+    "youAreNotInWhiteList": "You are not in the allowlist."
+  },
   "cw": "Connect Wallet",
   "mint": "Mint",
   "OpenSea": "OpenSea",
@@ -29,7 +33,7 @@
   "m6": " 4. Available QUEENGARDEN NFTs for Minting and Allowlists:",
   "m7": "Allowlists: 750",
   "m8": "Investors+Team+Treasury: 249",
- "m13": "After minting ends, any remaining QUEENGARDEN NFTs will be allocated to the Treasury.",
+  "m13": "After minting ends, any remaining QUEENGARDEN NFTs will be allocated to the Treasury.",
   "m14": "5. Who is eligible to mint?",
   "m15": "Everyone can participate in QUEENGARDEN NFT minting. Please log in to https://queengardennft.com/ and verify your allowlist eligibility through wallet connection.  ",
   "m16": "• Allowlists: Given the highest priority, they can guarantee QUEENGARDEN NFTs if they successfully minting during the allowlist phase.  ",

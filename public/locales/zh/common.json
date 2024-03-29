@@ -1,7 +1,11 @@
 {
+  "hint": {
+    "youAreInWhiteList": "您已在白名單中，請連接錢包進行鑄造。",
+    "youAreNotInWhiteList": "您不在白名單中。"
+  },
   "cw": "連接錢包",
-  "mint": "外海",
-  "OpenSea": "外海",
+  "mint": "鑄造",
+  "OpenSea": "Opensea",
   "oneone": "外海",
   "one": "外海",
   "two": "抽獎和空投",
@@ -29,7 +33,7 @@
   "m6": "4. 可供鑄造的 QUEENGARDEN NFT數量和白名單數量：",
   "m7": "GTD :750",
   "m8": "Investors+Team+Treasury: 249",
- "m13": "鑄造結束後，任何未鑄造的 QUEENGARDEN NFT 都將被歸入國庫。",
+  "m13": "鑄造結束後，任何未鑄造的 QUEENGARDEN NFT 都將被歸入國庫。",
   "m14": "5. 誰具有鑄造資格",
   "m15": "所有人都能參與 QUEENGARDEN NFT  鑄造，請先登錄 https://queengardennft.com/ 後，通過連接錢包來查驗自己是否具有白名單資格。",
   "m16": "• 白名單持有者：優先級最高，只要在鑄造時間內打款成功，將可以保證獲得QUEENGARDEN NFT。",

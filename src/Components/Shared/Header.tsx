@@ -53,15 +53,19 @@ function NavButtons() {
   }, []);
   return (
     <div className="flex gap-4">
-      <ShadowButton>
-        <i className="ri-twitter-x-fill text-2xl"></i>
-      </ShadowButton>
+      <Link href="https://twitter.com/QueenGardenNFT" target="_blank">
+        <ShadowButton>
+          <i className="ri-twitter-x-fill text-2xl"></i>
+        </ShadowButton>
+      </Link>
       {/* <ShadowButton>
         <i className="ri-instagram-fill text-3xl"></i>
       </ShadowButton> */}
-      <ShadowButton>
-        <i className="ri-discord-fill text-3xl"></i>
-      </ShadowButton>
+      <Link href="https://discord.gg/queengarden" target="_blank">
+        <ShadowButton>
+          <i className="ri-discord-fill text-3xl"></i>
+        </ShadowButton>
+      </Link>
 
       <Dropdown>
         <MenuButton

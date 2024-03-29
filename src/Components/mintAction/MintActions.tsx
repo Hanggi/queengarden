@@ -59,8 +59,7 @@ export default function MintActions({}: Props) {
   return (
     <div className="w-full mt-[20px] xl:my-[30px] py-[30px] px-[12px] xl:h-[124px] bg-[rgba(255,214,0,0.2)] rounded-[12px] xl:rounded-[16px] flex flex-col lg:flex-row lg:justify-between items-center mx-auto">
       <div className="text-[18px] leading-[24px] font-medium text-left xl:text-left mb-[20px] lg:mb-0 mx-[20px]">
-        The mint is over now. Please connect your wallet to check if you have
-        successfully minted the Nobody NFT.
+        mint
       </div>
       <div className="shrink-0">
         <div

@@ -1,4 +1,8 @@
 {
+  "hint": {
+    "youAreInWhiteList": "あなたはAllowlistに登録されています。",
+    "youAreNotInWhiteList": "あなたはAllowlistに登録されていません。"
+  },
   "cw": "ウォレットを接続する",
   "mint": "ミント",
   "OpenSea": "公海",
