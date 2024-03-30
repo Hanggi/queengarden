@@ -3,7 +3,7 @@ import { useAccount, useChainId, useSwitchChain } from "wagmi";
 
 import Typography from "@mui/joy/Typography";
 
-const CHAIN_ID = 80001;
+const CHAIN_ID = 137;
 
 export default function MyConnectButton() {
   const { address, isConnected } = useAccount();
