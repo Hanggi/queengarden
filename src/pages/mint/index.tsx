@@ -76,10 +76,10 @@ export default function MintPage() {
                   QUEENGARDEN NFT Smart Contract Information&nbsp;&nbsp;
                   <Link
                     className=" text-[rgba(59,132,255,1)] underline"
-                    href="https://etherscan.io/address/0x129d453253dbCE5CF6997DB8Fb461B2A20Fd275F"
+                    href="https://polygonscan.com/address/0xfB4E3105A1fD7BbeaB340414bfEAE4A50dA3520e"
                     target="__blank"
                   >
-                    0x
+                    0x0xfB4E3105A1fD7BbeaB340414bfEAE4A50dA3520e
                   </Link>
                 </p>
               </div>
