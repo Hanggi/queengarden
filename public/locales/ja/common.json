@@ -17,7 +17,7 @@
   "max": "1ウォレットあたりの最大ミント数: 1  ",
   "over": "もうミントは終わってしまった。ウォレットに接続して、QUEENGARDEN NFT が正常に鋳造されたかどうかを確認してください。",
   "information": "QUEENGARDEN NFT スマートコントラクト情報",
-  "minttitle": "Minted 0/999",
+  "minttitle": "Minted {{count}}/999",
   "mintschedule": "ミントスケジュール ",
   "Allowlist": "Allowlistフェーズ ",
   "p1": "3/31 20:00 - 4/1 20:00 (UTC+9)",

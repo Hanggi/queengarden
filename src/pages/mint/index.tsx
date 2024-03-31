@@ -1,8 +1,9 @@
 import MintActions from "@/Components/mintAction/MintActions";
 import { wl } from "@/Components/white-list/white-list";
+import { queenGardenABI } from "@/abi/queen-garden.abi";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useAccount } from "wagmi";
+import { useAccount, useReadContract } from "wagmi";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +27,7 @@ export default function MintPage() {
       <div className="pb-[150px] relative pt-[120px] z-20 h-screen w-screen overflow-y-auto">
         <div className="w-full px-[12px] sm:px-0 sm:w-[80%] lg:w-[65%] xl:w-[1200px] mx-auto ">
           <div className="flex flex-col gap-6 mb-[100px]">
-            <div className=" xl:w-[760px] xl:h-[620px] py-[20px] px-[12px] xl:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgb(0, 0, 0)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] mx-auto">
+            <div className=" xl:w-[760px] xl:h-[650px] py-[20px] px-[12px] xl:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgb(0, 0, 0)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] mx-auto">
               <div className="flex relative">
                 <div className=" shrink-0 relative w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-[16px] overflow-hidden">
                   <Image
@@ -96,10 +97,18 @@ export default function MintPage() {
 function MintDescription() {
   const { t } = useTranslation("common");
 
+  const { data } = useReadContract({
+    abi: queenGardenABI,
+    address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x{string}`,
+    functionName: "totalSupply",
+  });
+
   return (
     <div className="overflow-visible w-full xl:w-[760px] p-4 lg:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] mt-[20px] xl:mt-0 mx-auto">
       <h3 className=" sm:text-black text-[21px] sm:text-[24px] font-bold leading-6 mb-[20px] mt-[30px] sm:mt-0">
-        {t("minttitle")}
+        {t("minttitle", {
+          count: data?.toString() || "0",
+        })}
       </h3>
       <div>
         <h4 className="text-[20px] sm:text-[22px] font-semibold mb-4">

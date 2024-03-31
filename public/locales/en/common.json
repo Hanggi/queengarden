@@ -17,7 +17,7 @@
   "max": "Maximum Mint Per Wallet Address: 1",
   "over": "The mint is over now. Please connect your wallet to check if you have successfully minted the QUEENGARDEN NFT.",
   "information": "QUEENGARDEN NFT Smart Contract Information",
-  "minttitle": "Minted: 0/999",
+  "minttitle": "Minted: {{count}}/999",
   "mintschedule": "Minting Schedule",
   "Allowlist": "Allowlist",
   "p1": "March 31, 8 PM - April 1, 8 PM (UTC+9)",

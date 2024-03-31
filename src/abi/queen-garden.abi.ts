@@ -6,6 +6,11 @@ export const queenGardenABI = [
         name: "initialOwner",
         type: "address",
       },
+      {
+        internalType: "bytes32",
+        name: "_wlRoot",
+        type: "bytes32",
+      },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
@@ -351,6 +356,19 @@ export const queenGardenABI = [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "bytes32[]",
+        name: "proof",
+        type: "bytes32[]",
+      },
+    ],
+    name: "mintWL",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "name",
     outputs: [
@@ -526,6 +544,58 @@ export const queenGardenABI = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "_startTime",
+        type: "uint256",
+      },
+    ],
+    name: "setStartTime",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "root",
+        type: "bytes32",
+      },
+    ],
+    name: "setWLRoot",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bool",
+        name: "state",
+        type: "bool",
+      },
+    ],
+    name: "setWlState",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "startTime",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "bytes4",
         name: "interfaceId",
         type: "bytes4",
@@ -664,6 +734,19 @@ export const queenGardenABI = [
     name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "wlIsActive",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
 ] as const;
