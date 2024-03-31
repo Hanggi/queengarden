@@ -106,6 +106,7 @@ function MintDescription() {
   return (
     <div className="overflow-visible w-full xl:w-[760px] p-4 lg:p-[30px] rounded-[24px] border-black border-[3px] bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] mt-[20px] xl:mt-0 mx-auto">
       <h3 className=" sm:text-black text-[21px] sm:text-[24px] font-bold leading-6 mb-[20px] mt-[30px] sm:mt-0">
+        {/* @ts-ignore */}
         {t("minttitle", {
           count: data?.toString() || "0",
         })}
