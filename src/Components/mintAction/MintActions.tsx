@@ -1,8 +1,17 @@
 import { queenGardenABI } from "@/abi/queen-garden.abi";
 import { proof } from "@/abi/queen-graden.proof";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
+import _ from "lodash";
 import { useAccount, useSimulateContract, useWriteContract } from "wagmi";
 import { SimulateContractErrorType } from "wagmi/actions";
+
+function getValueIgnoringCase(obj: any, searchKey: string): any {
+  const foundKey = _.findKey(
+    obj,
+    (value, key) => key.toLowerCase() === searchKey.toLowerCase(),
+  );
+  return foundKey ? obj[foundKey] : undefined;
+}
 
 interface Props {}
 
@@ -15,7 +24,7 @@ export default function MintActions({}: Props) {
     abi: queenGardenABI,
     address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x{string}`,
     functionName: "mintWL",
-    args: [address ? proof[address] : ""],
+    args: [address ? getValueIgnoringCase(proof, address) : ""],
   });
 
   // console.log(data);
@@ -47,7 +56,7 @@ export default function MintActions({}: Props) {
               abi: queenGardenABI,
               address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x{string}`,
               functionName: "mintWL",
-              args: [address ? proof[address] : ""],
+              args: [address ? getValueIgnoringCase(proof, address) : ""],
             });
           }}
         >
