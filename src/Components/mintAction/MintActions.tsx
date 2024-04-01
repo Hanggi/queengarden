@@ -23,8 +23,9 @@ export default function MintActions({}: Props) {
   const result = useSimulateContract({
     abi: queenGardenABI,
     address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x{string}`,
-    functionName: "mintWL",
-    args: [address ? getValueIgnoringCase(proof, address) : ""],
+    functionName: "freeMint",
+    // args: [address ? getValueIgnoringCase(proof, address) : ""],
+    args: [],
   });
 
   // console.log(data);
@@ -55,8 +56,9 @@ export default function MintActions({}: Props) {
             writeContract({
               abi: queenGardenABI,
               address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x{string}`,
-              functionName: "mintWL",
-              args: [address ? getValueIgnoringCase(proof, address) : ""],
+              functionName: "freeMint",
+              // args: [address ? getValueIgnoringCase(proof, address) : ""],
+              args: [],
             });
           }}
         >
