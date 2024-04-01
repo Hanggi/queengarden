@@ -107,7 +107,7 @@ function getErrorMessage(reason: SimulateContractErrorType) {
     return "Sale is not started.";
   }
 
-  if (reason.message.includes("Purchase would exceed max supply Contract")) {
+  if (reason.message.includes("Purchase would exceed max supply")) {
     return "Sale is sold out.";
   }
 
